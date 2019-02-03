@@ -1,0 +1,4 @@
+{
+  'access-control-allow-origin': '*',
+  'content-type': 'image/bmp'
+}
