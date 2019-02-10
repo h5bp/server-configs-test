@@ -13,40 +13,40 @@ export { options }
 export function setup () {
   return {
     basicFileAccess: {
-      name: "basic access",
-      setup: basicFileAccess.setup(),
+      name: 'basic access',
+      setup: basicFileAccess.setup()
       // fn: basicFileAccess.default
     },
     cacheBusting: {
-      name: "cache busting",
-      setup: cacheBusting.setup(),
+      name: 'cache busting',
+      setup: cacheBusting.setup()
       // fn: cacheBusting.default
     },
     customErrors: {
-      name: "custom errors",
-      setup: customErrors.setup(),
+      name: 'custom errors',
+      setup: customErrors.setup()
       // fn: customErrors.default
     },
     forbiddenFiles: {
-      name: "forbidden files",
-      setup: forbiddenFiles.setup(),
+      name: 'forbidden files',
+      setup: forbiddenFiles.setup()
       // fn: forbiddenFiles.default
     },
     precompressedFiles: {
-      name: "precompressed files",
-      setup: precompressedFiles.setup(),
+      name: 'precompressed files',
+      setup: precompressedFiles.setup()
       // fn: precompressedFiles.default
     },
     rewrites: {
-      name: "rewrites",
-      setup: rewrites.setup(),
+      name: 'rewrites',
+      setup: rewrites.setup()
       // fn: rewrites.default
     },
     ssl: {
-      name: "ssl",
-      setup: ssl.setup(),
+      name: 'ssl',
+      setup: ssl.setup()
       // fn: ssl.default
-    },
+    }
   }
 }
 

@@ -14,7 +14,7 @@ export const options = Object.assign(defaultOptions, {
 export function setup () {
   return [
     {
-      name: 'modern policy',
+      name: 'intermediate policy',
       requests: ['https://secure.server.localhost/']
     }
   ]

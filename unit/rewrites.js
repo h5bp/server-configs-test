@@ -1,8 +1,6 @@
-import { options as defaultOptions, assert } from './abstract-test.js'
+import { options, assert } from './abstract-test.js'
 
-export const options = Object.assign(defaultOptions, {
-  maxRedirects: 0
-})
+export { options }
 
 export function setup () {
   return [

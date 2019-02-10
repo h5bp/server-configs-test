@@ -1,9 +1,9 @@
-import { options, test } from './abstract-test.js'
+import { options, prepare, test } from './abstract-test.js'
 
 export { options }
 
 export function setup () {
-  const suite = [
+  return prepare([
     {
       name: 'filename-based cache busting works',
       default: {
@@ -15,7 +15,6 @@ export function setup () {
         'test.12345.css': {},
         'test.12345.js': {},
         'test.12345.bmp': {},
-        'test.12345.cur': {},
         'test.12345.gif': {},
         'test.12345.ico': {},
         'test.12345.jpeg': {},
@@ -38,15 +37,7 @@ export function setup () {
     //     }
     //   }
     // }
-  ]
-  for (const test of suite) {
-    for (const prop of Object.keys(test.default || {})) {
-      for (const request of Object.keys(test.requests)) {
-        test.requests[request][prop] = Object.assign(test.default[prop], test.requests[request][prop] || {})
-      }
-    }
-  }
-  return suite
+  ])
 }
 
 export default test
