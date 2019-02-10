@@ -3,7 +3,7 @@ const zlib = require('zlib')
 const fs = require('fs-extra')
 const mime = require('mime-types')
 const compressible = require('compressible')
-const testSuites = require('../unit/basic-file-access.json')
+const testSuites = require('../lib/basic-file-access.json')
 
 const errorCb = (err) => {
   if (err) throw err

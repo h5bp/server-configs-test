@@ -11,31 +11,39 @@ This repository contains unit tests suites helping validate correctness of a ser
 
 These tests follow standard recommendations from recognized institutions like IETF and W3C.
 
-### `basic-file-access.js`
+### `basic-file-access.js` (common)
    
 Check if all common files are served correctly.
 
-### `cache-busting.js`
+### `cache-busting.js` (common)
 
 Check if cache-busting is working.
 
-### `custom-errors.js`
+### `concatenation.js.js`
+
+Check if concatenation is working.
+
+### `custom-errors.js` (common)
 
 Check if errors are served as desired.
 
-### `forbidden-files.js`
+### `enforce-gzip.js`
+
+Check if gzip is enable even if mangled headers.
+
+### `forbidden-files.js` (common)
 
 Check if forbidden files are well handled.
 
-### `precompressed-files.js`
+### `precompressed-files-(gzip|brotli).js`
 
-Check if server use precompressed-files if available.
+Check if server use (gzip|brotli) precompressed-files if available.
 
-### `rewrites.js`
+### `rewrites.js` (common)
 
 Check redirection (www/https) behavior.
 
-### `ssl.js`
+### `ssl.js` (common)
 
 Check correctness for the TLS/SSL configuration.
 
@@ -62,8 +70,8 @@ Bonus test file to run a load benchmark.
   * Secure `secure.` hosts, possibly with certs within `certs/`
   * Mount `fixtures/` to be the root of the hosts
 * Run the units
-  * `k6 run unit/index.js` (run all)
-  * `k6 run unit/[unit].js`
+  * `k6 run lib/index.js` (run all common units)
+  * `k6 run lib/[unit].js`
 
 
 ## Contributing
