@@ -1,4 +1,0 @@
-{
-  'cache-control': 'max-age=3600, no-transform',
-  'content-type': 'application/atom+xml; charset=utf-8'
-}

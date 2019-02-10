@@ -1,0 +1,368 @@
+[
+  {
+    "name": "files are served with the correct HTTP response response headers",
+    "default": {
+      "requestHeaders": {
+        "Accept-Encoding": "gzip, deflate, sdch"
+      },
+      "responseHeaders": {
+        "Access-Control-Allow-Origin": null,
+        "Cache-Control": "max-age=2592000, no-transform",
+        "X-Powered-By": null,
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": null,
+        "X-Ua-Compatible": null,
+        "X-Xss-Protection": null
+      }
+    },
+    "requests": {
+      "test.appcache": {
+        "responseHeaders": {
+          "Cache-Control": "max-age=0, no-transform"
+        }
+      },
+      "test.atom": {
+        "responseHeaders": {
+          "Cache-Control": "max-age=3600, no-transform"
+        }
+      },
+      "test.crx": {},
+      "test.css": {
+        "responseHeaders": {
+          "Cache-Control": "max-age=31536000, no-transform"
+        }
+      },
+      "test.eot": {
+        "requestHeaders": {
+          "origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      "test.f4v": {
+        "responseHeaders": {
+          "Content-Type": "video/mp4"
+        }
+      },
+      "test.flv": {},
+      "test.geojson": {
+        "responseHeaders": {
+          "Cache-Control": "max-age=0, no-transform"
+        }
+      },
+      "test.gif": {
+        "requestHeaders": {
+          "origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      "test.htc": {},
+      "test.html": {
+        "responseHeaders": {
+          "Cache-Control": "max-age=0, no-transform",
+          "Content-Security-Policy": "script-src 'self'; object-src 'self'",
+          "X-Frame-Options": "DENY",
+          "X-Ua-Compatible": "IE=edge",
+          "X-Xss-Protection": "1; mode=block"
+        }
+      },
+      "test.ico": {
+        "requestHeaders": {
+          "origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*",
+          "Cache-Control": "max-age=604800, no-transform",
+          "Content-Type": "image/x-icon"
+        }
+      },
+      "test.ics": {
+        "responseHeaders": {
+          "Cache-Control": "max-age=0, no-transform"
+        }
+      },
+      "test.jpeg": {
+        "requestHeaders": {
+          "origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      "test.jpg": {
+        "requestHeaders": {
+          "origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      "test.js": {
+        "responseHeaders": {
+          "Cache-Control": "max-age=31536000, no-transform",
+          "Content-Type": "text/javascript; charset=utf-8"
+        }
+      },
+      "test.json": {
+        "responseHeaders": {
+          "Cache-Control": "max-age=0, no-transform"
+        }
+      },
+      "test-schema.json": {
+        "responseHeaders": {
+          "Cache-Control": "max-age=0, no-transform"
+        }
+      },
+      "test.jsonld": {
+        "responseHeaders": {
+          "Cache-Control": "max-age=0, no-transform"
+        }
+      },
+      "test.m4a": {},
+      "test.m4v": {
+        "responseHeaders": {
+          "Content-Type": "video/mp4"
+        }
+      },
+      "test.map": {
+        "responseHeaders": {
+          "Cache-Control": "max-age=0, no-transform"
+        }
+      },
+      "test.markdown": {
+        "responseHeaders": {
+          "Cache-Control": "max-age=0, no-transform"
+        }
+      },
+      "test.md": {
+        "responseHeaders": {
+          "Cache-Control": "max-age=0, no-transform"
+        }
+      },
+      "test.mjs": {
+        "responseHeaders": {
+          "Cache-Control": "max-age=31536000, no-transform",
+          "Content-Type": "text/javascript; charset=utf-8"
+        }
+      },
+      "test.mp4": {},
+      "test.oex": {
+        "responseHeaders": {
+          "Content-Type": "application/x-opera-extension"
+        }
+      },
+      "test.oga": {},
+      "test.ogg": {},
+      "test.ogv": {},
+      "test.opus": {
+        "responseHeaders": {
+          "Content-Type": "audio/ogg"
+        }
+      },
+      "test.otf": {
+        "requestHeaders": {
+          "origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      "test.pdf": {},
+      "test.png": {
+        "requestHeaders": {
+          "origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      "test.rdf": {
+        "responseHeaders": {
+          "Cache-Control": "max-age=3600, no-transform"
+        }
+      },
+      "test.rss": {
+        "responseHeaders": {
+          "Cache-Control": "max-age=3600, no-transform"
+        }
+      },
+      "test.safariextz": {
+        "responseHeaders": {
+          "Content-Type": false
+        }
+      },
+      "test.svg": {
+        "requestHeaders": {
+          "origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      "test.svgz": {
+        "requestHeaders": {
+          "origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      "test.swf": {},
+      "test.ttc": {
+        "requestHeaders": {
+          "origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      "test.ttf": {
+        "requestHeaders": {
+          "origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      "test.txt": {},
+      "test.vcard": { },
+      "test.vcf": {
+        "responseHeaders": {
+          "Content-Type": "text/vcard; charset=utf-8"
+        }
+      },
+      "test.vtt": {},
+      "test.wasm": {
+        "responseHeaders": {
+          "Cache-Control": "max-age=31536000, no-transform"
+        }
+      },
+      "test.webapp": {
+        "responseHeaders": {
+          "Cache-Control": "max-age=0, no-transform"
+        }
+      },
+      "test.webm": {},
+      "test.webmanifest": {
+        "responseHeaders": {
+          "Cache-Control": "max-age=604800, no-transform"
+        }
+      },
+      "test.webp": {
+        "requestHeaders": {
+          "origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*",
+          "Cache-Control": "max-age=2592000, no-transform"
+        }
+      },
+      "test.woff": {
+        "requestHeaders": {
+          "origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      "test.woff2": {
+        "requestHeaders": {
+          "origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      "test.xml": {
+        "responseHeaders": {
+          "Cache-Control": "max-age=0, no-transform"
+        }
+      },
+      "test.xpi": {}
+    }
+  },
+  {
+    "name": "files are served compressed, even if the request is made with a mangled `Accept-Encoding` HTTP header",
+    "default": {
+      "responseHeaders": {
+        "Cache-Control": "max-age=31536000, no-transform",
+        "Content-Type": "text/javascript; charset=utf-8"
+      }
+    },
+    "requests": {
+      "test.1.js": {
+        "requestHeaders": {
+          "Accept-EncodXng": "gzip, deflate"
+        }
+      },
+      "test.2.js": {
+        "requestHeaders": {
+          "X-cept-Encoding": "gzip, deflate"
+        }
+      },
+      "test.3.js": {
+        "requestHeaders": {
+          "XXXXXXXXXXXXXXX": "XXXXXXXXXXXXX"
+        }
+      },
+      "test.4.js": {
+        "requestHeaders": {
+          "---------------": "-------------"
+        }
+      },
+      "test.5.js": {
+        "requestHeaders": {
+          "~~~~~~~~~~~~~~~": "~~~~~~~~~~~~~"
+        }
+      }
+    }
+  },
+  {
+    "name": "access is forbidden to files that can expose sensitive information",
+    "default": {
+      "statusCode": 403
+    },
+    "requests": {
+      "%23test%23": {},
+      "test.bak": {},
+      "test.conf": {},
+      "test.dist": {},
+      "test.fla": {},
+      "test.inc": {},
+      "test.ini": {},
+      "test.log": {},
+      "test.psd": {},
+      "test.sh": {},
+      "test.sql": {},
+      "test.swo": {},
+      "test.swp": {}
+    }
+  },
+  {
+    "name": "files as visible content from within the `/.well-known/` hidden directory are served",
+    "default": {
+      "requestHeaders": {
+        "Accept-Encoding": "gzip, deflate, sdch"
+      },
+      "responseHeaders": {
+        "Access-Control-Allow-Origin": null,
+        "X-Powered-By": null,
+        "X-Content-Type-Options": "nosniff",
+        "Cache-Control": "max-age=0, no-transform",
+        "Content-Security-Policy": "script-src 'self'; object-src 'self'",
+        "X-Frame-Options": "DENY",
+        "X-Ua-Compatible": "IE=edge",
+        "X-Xss-Protection": "1; mode=block",
+        "Content-Type": "text/html; charset=utf-8",
+        "Content-Encoding": "gzip"
+      }
+    },
+    "requests": {
+      ".well-known/test.html": {},
+      ".well-known/test/test.html": {}
+    }
+  }
+]
