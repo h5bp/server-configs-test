@@ -3,7 +3,7 @@ node_js: node
 
 before_script: npm run build
 
-before_deploy: tar czf server-configs-test.tar.gz unit/* certs/* fixtures/* README.md LICENSE.txt
+before_deploy: tar czf server-configs-test.tar.gz unit certs fixtures README.md LICENSE.txt
 
 deploy:
   provider: releases
