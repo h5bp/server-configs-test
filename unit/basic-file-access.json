@@ -1,6 +1,6 @@
 [
   {
-    "name": "files are served with the correct HTTP response response headers",
+    "name": "files are served with the correct HTTP response headers",
     "default": {
       "requestHeaders": {
         "Accept-Encoding": "gzip, deflate, sdch"
@@ -293,7 +293,7 @@
     }
   },
   {
-    "name": "files are served compressed, even if the request is made with a mangled `Accept-Encoding` HTTP header",
+    "name": "files are served compressed even if the Accept-Encoding is mangled",
     "default": {
       "responseHeaders": {
         "Cache-Control": "max-age=31536000, no-transform",

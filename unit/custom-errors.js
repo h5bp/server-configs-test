@@ -7,7 +7,7 @@ const body = open('../fixtures/404.html')
 export function setup () {
   return [
     {
-      name: 404,
+      name: 'serves the custom 404 error',
       requests: ['this/does/not.exist'],
       body
     }
