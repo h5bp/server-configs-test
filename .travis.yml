@@ -8,6 +8,7 @@ before_deploy: tar czf server-configs-test.tar.gz lib certs fixtures README.md L
 deploy:
   provider: releases
   api_key: $GITHUB_API_TOKEN
+    # secure: "itatOgspOE49LX1fczgut51/3AGiCE7ueMeUHdGseB7cWfyFlJ2eUozspXBfbmWtEls8Y97/V1Q8vZty/WXJ2Q3CdxjK8TBBhVycRgK5Qp03eG/yFy/G5hXN1mGil4KwIwqHVYAQvCVcuDv0Ek4V+PEfNp8KGkRILxP2a6kRjgw="
   file: server-configs-test.tar.gz
   skip_cleanup: true
   on:
