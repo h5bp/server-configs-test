@@ -1,2 +1,15 @@
 language: node_js
 node_js: node
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_API_TOKEN
+  file:
+    - unit/*
+    - certs/*
+    - fixtures/*
+    - README.md
+    - LCIENSE.txt
+  skip_cleanup: true
+  on:
+    tags: true
