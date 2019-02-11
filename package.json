@@ -24,7 +24,7 @@
   "standard": {
     "ignore": [
       "fixtures",
-      "bin/extra"
+      "bin/pre-fixtures"
     ],
     "globals": [
       "open"
