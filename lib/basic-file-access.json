@@ -1,6 +1,7 @@
 [
   {
     "name": "files are served with the correct HTTP response headers",
+    "domain": "http://server.localhost/",
     "default": {
       "requestHeaders": {
         "Accept-Encoding": "gzip, deflate, sdch"
@@ -15,18 +16,21 @@
         "X-Xss-Protection": null
       }
     },
-    "requests": {
-      "test.appcache": {
+    "requests": [
+      {
+        "target": "test.appcache",
         "responseHeaders": {
           "Cache-Control": "max-age=0, no-transform"
         }
       },
-      "test.atom": {
+      {
+        "target": "test.atom",
         "responseHeaders": {
           "Cache-Control": "max-age=3600, no-transform"
         }
       },
-      "test.bmp": {
+      {
+        "target": "test.bmp",
         "requestHeaders": {
           "origin": "http://"
         },
@@ -34,13 +38,15 @@
           "Access-Control-Allow-Origin": "*"
         }
       },
-      "test.crx": {},
-      "test.css": {
+      "test.crx",
+      {
+        "target": "test.css",
         "responseHeaders": {
           "Cache-Control": "max-age=31536000, no-transform"
         }
       },
-      "test.eot": {
+      {
+        "target": "test.eot",
         "requestHeaders": {
           "origin": "http://"
         },
@@ -48,18 +54,21 @@
           "Access-Control-Allow-Origin": "*"
         }
       },
-      "test.f4v": {
+      {
+        "target": "test.f4v",
         "responseHeaders": {
           "Content-Type": "video/mp4"
         }
       },
-      "test.flv": {},
-      "test.geojson": {
+      "test.flv",
+      {
+        "target": "test.geojson",
         "responseHeaders": {
           "Cache-Control": "max-age=0, no-transform"
         }
       },
-      "test.gif": {
+      {
+        "target": "test.gif",
         "requestHeaders": {
           "origin": "http://"
         },
@@ -67,8 +76,9 @@
           "Access-Control-Allow-Origin": "*"
         }
       },
-      "test.htc": {},
-      "test.html": {
+      "test.htc",
+      {
+        "target": "test.html",
         "responseHeaders": {
           "Cache-Control": "max-age=0, no-transform",
           "Content-Security-Policy": "script-src 'self'; object-src 'self'",
@@ -77,7 +87,8 @@
           "X-Xss-Protection": "1; mode=block"
         }
       },
-      "test.ico": {
+      {
+        "target": "test.ico",
         "requestHeaders": {
           "origin": "http://"
         },
@@ -87,12 +98,14 @@
           "Content-Type": "image/x-icon"
         }
       },
-      "test.ics": {
+      {
+        "target": "test.ics",
         "responseHeaders": {
           "Cache-Control": "max-age=0, no-transform"
         }
       },
-      "test.jpeg": {
+      {
+        "target": "test.jpeg",
         "requestHeaders": {
           "origin": "http://"
         },
@@ -100,7 +113,8 @@
           "Access-Control-Allow-Origin": "*"
         }
       },
-      "test.jpg": {
+      {
+        "target": "test.jpg",
         "requestHeaders": {
           "origin": "http://"
         },
@@ -108,69 +122,81 @@
           "Access-Control-Allow-Origin": "*"
         }
       },
-      "test.js": {
+      {
+        "target": "test.js",
         "responseHeaders": {
           "Cache-Control": "max-age=31536000, no-transform",
           "Content-Type": "text/javascript; charset=utf-8"
         }
       },
-      "test.json": {
+      {
+        "target": "test.json",
         "responseHeaders": {
           "Cache-Control": "max-age=0, no-transform"
         }
       },
-      "test-schema.json": {
+      {
+        "target": "test-schema.json",
         "responseHeaders": {
           "Cache-Control": "max-age=0, no-transform"
         }
       },
-      "test.jsonld": {
+      {
+        "target": "test.jsonld",
         "responseHeaders": {
           "Cache-Control": "max-age=0, no-transform"
         }
       },
-      "test.m4a": {},
-      "test.m4v": {
+      "test.m4a",
+      {
+        "target": "test.m4v",
         "responseHeaders": {
           "Content-Type": "video/mp4"
         }
       },
-      "test.map": {
+      {
+        "target": "test.map",
         "responseHeaders": {
           "Cache-Control": "max-age=0, no-transform"
         }
       },
-      "test.markdown": {
+      {
+        "target": "test.markdown",
         "responseHeaders": {
           "Cache-Control": "max-age=0, no-transform"
         }
       },
-      "test.md": {
+      {
+        "target": "test.md",
         "responseHeaders": {
           "Cache-Control": "max-age=0, no-transform"
         }
       },
-      "test.mjs": {
+      {
+        "target": "test.mjs",
         "responseHeaders": {
           "Cache-Control": "max-age=31536000, no-transform",
           "Content-Type": "text/javascript; charset=utf-8"
         }
       },
-      "test.mp4": {},
-      "test.oex": {
+      "test.mp4",
+      {
+        "target": "test.oex",
         "responseHeaders": {
           "Content-Type": "application/x-opera-extension"
         }
       },
-      "test.oga": {},
-      "test.ogg": {},
-      "test.ogv": {},
-      "test.opus": {
+      "test.oga",
+      "test.ogg",
+      "test.ogv",
+      {
+        "target": "test.opus",
         "responseHeaders": {
           "Content-Type": "audio/ogg"
         }
       },
-      "test.otf": {
+      {
+        "target": "test.otf",
         "requestHeaders": {
           "origin": "http://"
         },
@@ -178,8 +204,9 @@
           "Access-Control-Allow-Origin": "*"
         }
       },
-      "test.pdf": {},
-      "test.png": {
+      "test.pdf",
+      {
+        "target": "test.png",
         "requestHeaders": {
           "origin": "http://"
         },
@@ -187,22 +214,26 @@
           "Access-Control-Allow-Origin": "*"
         }
       },
-      "test.rdf": {
+      {
+        "target": "test.rdf",
         "responseHeaders": {
           "Cache-Control": "max-age=3600, no-transform"
         }
       },
-      "test.rss": {
+      {
+        "target": "test.rss",
         "responseHeaders": {
           "Cache-Control": "max-age=3600, no-transform"
         }
       },
-      "test.safariextz": {
+      {
+        "target": "test.safariextz",
         "responseHeaders": {
           "Content-Type": false
         }
       },
-      "test.svg": {
+      {
+        "target": "test.svg",
         "requestHeaders": {
           "origin": "http://"
         },
@@ -210,7 +241,8 @@
           "Access-Control-Allow-Origin": "*"
         }
       },
-      "test.svgz": {
+      {
+        "target": "test.svgz",
         "requestHeaders": {
           "origin": "http://"
         },
@@ -218,8 +250,9 @@
           "Access-Control-Allow-Origin": "*"
         }
       },
-      "test.swf": {},
-      "test.ttc": {
+      "test.swf",
+      {
+        "target": "test.ttc",
         "requestHeaders": {
           "origin": "http://"
         },
@@ -227,7 +260,8 @@
           "Access-Control-Allow-Origin": "*"
         }
       },
-      "test.ttf": {
+      {
+        "target": "test.ttf",
         "requestHeaders": {
           "origin": "http://"
         },
@@ -235,31 +269,36 @@
           "Access-Control-Allow-Origin": "*"
         }
       },
-      "test.txt": {},
-      "test.vcard": { },
-      "test.vcf": {
+      "test.txt",
+      "test.vcard",
+      {
+        "target": "test.vcf",
         "responseHeaders": {
           "Content-Type": "text/vcard; charset=utf-8"
         }
       },
-      "test.vtt": {},
-      "test.wasm": {
+      "test.vtt",
+      {
+        "target": "test.wasm",
         "responseHeaders": {
           "Cache-Control": "max-age=31536000, no-transform"
         }
       },
-      "test.webapp": {
+      {
+        "target": "test.webapp",
         "responseHeaders": {
           "Cache-Control": "max-age=0, no-transform"
         }
       },
-      "test.webm": {},
-      "test.webmanifest": {
+      "test.webm",
+      {
+        "target": "test.webmanifest",
         "responseHeaders": {
           "Cache-Control": "max-age=604800, no-transform"
         }
       },
-      "test.webp": {
+      {
+        "target": "test.webp",
         "requestHeaders": {
           "origin": "http://"
         },
@@ -268,7 +307,8 @@
           "Cache-Control": "max-age=2592000, no-transform"
         }
       },
-      "test.woff": {
+      {
+        "target": "test.woff",
         "requestHeaders": {
           "origin": "http://"
         },
@@ -276,7 +316,8 @@
           "Access-Control-Allow-Origin": "*"
         }
       },
-      "test.woff2": {
+      {
+        "target": "test.woff2",
         "requestHeaders": {
           "origin": "http://"
         },
@@ -284,37 +325,40 @@
           "Access-Control-Allow-Origin": "*"
         }
       },
-      "test.xml": {
+      {
+        "target": "test.xml",
         "responseHeaders": {
           "Cache-Control": "max-age=0, no-transform"
         }
       },
-      "test.xpi": {}
-    }
+      "test.xpi"
+    ]
   },
   {
     "name": "access is forbidden to files that can expose sensitive information",
+    "domain": "http://server.localhost/",
     "default": {
       "statusCode": 403
     },
-    "requests": {
-      "%23test%23": {},
-      "test.bak": {},
-      "test.conf": {},
-      "test.dist": {},
-      "test.fla": {},
-      "test.inc": {},
-      "test.ini": {},
-      "test.log": {},
-      "test.psd": {},
-      "test.sh": {},
-      "test.sql": {},
-      "test.swo": {},
-      "test.swp": {}
-    }
+    "requests": [
+      "%23test%23",
+      "test.bak",
+      "test.conf",
+      "test.dist",
+      "test.fla",
+      "test.inc",
+      "test.ini",
+      "test.log",
+      "test.psd",
+      "test.sh",
+      "test.sql",
+      "test.swo",
+      "test.swp"
+    ]
   },
   {
     "name": "files as visible content from within the `/.well-known/` hidden directory are served",
+    "domain": "http://server.localhost/",
     "default": {
       "requestHeaders": {
         "Accept-Encoding": "gzip, deflate, sdch"
@@ -332,9 +376,9 @@
         "Content-Encoding": "gzip"
       }
     },
-    "requests": {
-      ".well-known/test.html": {},
-      ".well-known/test/test.html": {}
-    }
+    "requests": [
+      ".well-known/test.html",
+      ".well-known/test/test.html"
+    ]
   }
 ]
