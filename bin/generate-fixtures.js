@@ -10,8 +10,9 @@ const errorCb = (err) => {
 }
 
 for (const suite of testSuites) {
-  for (const request of Object.keys(suite.requests)) {
-    const type = mime.contentType(request)
+  for (const request of suite.requests) {
+    const file = request.target || request
+    const type = mime.contentType(file)
     let content = {
       'Content-Type': type || null,
       'Content-Encoding': compressible(type) ? 'gzip' : null
@@ -19,10 +20,10 @@ for (const suite of testSuites) {
     if (suite.default && suite.default.responseHeaders) {
       content = Object.assign(content, suite.default.responseHeaders)
     }
-    if (suite.requests[request].responseHeaders) {
-      content = Object.assign(content, suite.requests[request].responseHeaders)
+    if (request.responseHeaders) {
+      content = Object.assign(content, request.responseHeaders)
     }
-    fs.outputJsonSync(`fixtures/${request}`, content)
+    fs.outputJsonSync(`fixtures/${file}`, content)
   }
 }
 
@@ -41,4 +42,4 @@ fs.outputFile('fixtures/test-pre-gzip.js.br', zlib.brotliCompressSync(JSON.strin
   'Content-Encoding': 'br'
 })), errorCb)
 
-fs.copy(path.join(__dirname, 'extra'), 'fixtures', errorCb)
+fs.copy(path.join(__dirname, 'pre-fixtures'), 'fixtures', errorCb)
