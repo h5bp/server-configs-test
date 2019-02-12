@@ -37,7 +37,7 @@ fs.outputFile('fixtures/test-pre-gzip.js.gz', zlib.gzipSync(JSON.stringify({
   'Content-Type': 'text/javascript; charset=utf-8',
   'Content-Encoding': 'gzip'
 })), errorCb)
-fs.outputFile('fixtures/test-pre-gzip.js.br', zlib.brotliCompressSync(JSON.stringify({
+fs.outputFile('fixtures/test-pre-brotli.js.br', zlib.brotliCompressSync(JSON.stringify({
   'Content-Type': 'text/javascript; charset=utf-8',
   'Content-Encoding': 'br'
 })), errorCb)
