@@ -32,7 +32,7 @@
       {
         "target": "test.bmp",
         "requestHeaders": {
-          "origin": "http://"
+          "Origin": "http://"
         },
         "responseHeaders": {
           "Access-Control-Allow-Origin": "*"
@@ -48,7 +48,7 @@
       {
         "target": "test.eot",
         "requestHeaders": {
-          "origin": "http://"
+          "Origin": "http://"
         },
         "responseHeaders": {
           "Access-Control-Allow-Origin": "*"
@@ -70,7 +70,7 @@
       {
         "target": "test.gif",
         "requestHeaders": {
-          "origin": "http://"
+          "Origin": "http://"
         },
         "responseHeaders": {
           "Access-Control-Allow-Origin": "*"
@@ -90,7 +90,7 @@
       {
         "target": "test.ico",
         "requestHeaders": {
-          "origin": "http://"
+          "Origin": "http://"
         },
         "responseHeaders": {
           "Access-Control-Allow-Origin": "*",
@@ -107,7 +107,7 @@
       {
         "target": "test.jpeg",
         "requestHeaders": {
-          "origin": "http://"
+          "Origin": "http://"
         },
         "responseHeaders": {
           "Access-Control-Allow-Origin": "*"
@@ -116,7 +116,7 @@
       {
         "target": "test.jpg",
         "requestHeaders": {
-          "origin": "http://"
+          "Origin": "http://"
         },
         "responseHeaders": {
           "Access-Control-Allow-Origin": "*"
@@ -198,7 +198,7 @@
       {
         "target": "test.otf",
         "requestHeaders": {
-          "origin": "http://"
+          "Origin": "http://"
         },
         "responseHeaders": {
           "Access-Control-Allow-Origin": "*"
@@ -208,7 +208,7 @@
       {
         "target": "test.png",
         "requestHeaders": {
-          "origin": "http://"
+          "Origin": "http://"
         },
         "responseHeaders": {
           "Access-Control-Allow-Origin": "*"
@@ -235,7 +235,7 @@
       {
         "target": "test.svg",
         "requestHeaders": {
-          "origin": "http://"
+          "Origin": "http://"
         },
         "responseHeaders": {
           "Access-Control-Allow-Origin": "*"
@@ -244,7 +244,7 @@
       {
         "target": "test.svgz",
         "requestHeaders": {
-          "origin": "http://"
+          "Origin": "http://"
         },
         "responseHeaders": {
           "Access-Control-Allow-Origin": "*"
@@ -254,7 +254,7 @@
       {
         "target": "test.ttc",
         "requestHeaders": {
-          "origin": "http://"
+          "Origin": "http://"
         },
         "responseHeaders": {
           "Access-Control-Allow-Origin": "*"
@@ -263,7 +263,7 @@
       {
         "target": "test.ttf",
         "requestHeaders": {
-          "origin": "http://"
+          "Origin": "http://"
         },
         "responseHeaders": {
           "Access-Control-Allow-Origin": "*"
@@ -300,7 +300,7 @@
       {
         "target": "test.webp",
         "requestHeaders": {
-          "origin": "http://"
+          "Origin": "http://"
         },
         "responseHeaders": {
           "Access-Control-Allow-Origin": "*",
@@ -310,7 +310,7 @@
       {
         "target": "test.woff",
         "requestHeaders": {
-          "origin": "http://"
+          "Origin": "http://"
         },
         "responseHeaders": {
           "Access-Control-Allow-Origin": "*"
@@ -319,7 +319,7 @@
       {
         "target": "test.woff2",
         "requestHeaders": {
-          "origin": "http://"
+          "Origin": "http://"
         },
         "responseHeaders": {
           "Access-Control-Allow-Origin": "*"

@@ -37,8 +37,8 @@ To run all tests, execute:
 $ k6 run lib/index.js
 ```
 
-You may want to run only specific test.
-Add a environment variable `TESTS` with all wanted test names separated by `:`.
+To run only specific tests, use the environment variable `TESTS` with all wanted test names separated by `:` as value.
+
 The environment variable can be passed as an argument:
 
 ```sh
@@ -179,6 +179,36 @@ A separate command is required to run it:
 
 ```sh
 $ k6 run lib/benchmark.js
+```
+
+
+## Suite Structure
+
+```json
+[
+  {
+    "name": "unit tests suite 1",
+    "domain": "http://server.localhost/ (optional)",
+    "default": { // optional default values
+      "requestHeaders": {
+        "Header-Name": "header to add to all the requests"
+      },
+      "responseHeaders": {
+        "Header-Name": "header and its value to test for all the requests"
+      },
+      "statusCode": 311, // status to validate for all the requests
+    },
+    "requests": [
+      "request1", // use only default values
+      {
+        "target": "request2",
+        "responseHeaders": {
+          "Header-Name": "custom header and its value to test for this request"
+        }
+      }
+    ]
+  }
+]
 ```
 
 
