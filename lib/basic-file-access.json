@@ -82,6 +82,7 @@
         "responseHeaders": {
           "Cache-Control": "max-age=0, no-transform",
           "Content-Security-Policy": "script-src 'self'; object-src 'self'",
+          "Referrer-Policy": "no-referrer-when-downgrade",
           "X-Frame-Options": "DENY",
           "X-Ua-Compatible": "IE=edge",
           "X-Xss-Protection": "1; mode=block"
@@ -369,6 +370,7 @@
         "X-Content-Type-Options": "nosniff",
         "Cache-Control": "max-age=0, no-transform",
         "Content-Security-Policy": "script-src 'self'; object-src 'self'",
+        "Referrer-Policy": "no-referrer-when-downgrade",
         "X-Frame-Options": "DENY",
         "X-Ua-Compatible": "IE=edge",
         "X-Xss-Protection": "1; mode=block",
