@@ -51,7 +51,39 @@ $ k6 run lib/index.js -e TESTS=basic-file-access:rewrites
    
 Check if all common files are served correctly.
 
-The requested file should be serve exactly as expected, all HTTP should be valid.
+The requested file should be serve exactly as expected, all HTTP headers should be valid.
+
+<details>
+<summary>References</summary>
+
+* https://www.iana.org/assignments/media-types/media-types.xhtml
+* https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
+* https://enable-cors.org/
+* https://www.w3.org/TR/cors/
+* https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image
+* https://blog.chromium.org/2011/07/using-cross-domain-images-in-webgl-and.html
+* https://developers.google.com/fonts/docs/troubleshooting
+* https://msdn.microsoft.com/en-us/library/ie/bg182625.aspx#docmode
+* https://blogs.msdn.microsoft.com/ie/2014/04/02/stay-up-to-date-with-enterprise-mode-for-internet-explorer-11/
+* https://msdn.microsoft.com/en-us/library/ff955275.aspx
+* https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy
+* https://www.w3.org/TR/CSP3/
+* https://content-security-policy.com/
+* https://www.html5rocks.com/en/tutorials/security/content-security-policy/
+* https://scotthelme.co.uk/a-new-security-header-referrer-policy/
+* https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
+* https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
+* https://blogs.msdn.microsoft.com/ie/2008/07/02/ie8-security-part-v-comprehensive-protection/
+* https://mimesniff.spec.whatwg.org/
+* https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
+* https://tools.ietf.org/html/rfc7034
+* https://blogs.msdn.microsoft.com/ieinternals/2010/03/30/combating-clickjacking-with-x-frame-options/
+* https://www.owasp.org/index.php/Clickjacking
+* https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection
+* https://blogs.msdn.microsoft.com/ie/2008/07/02/ie8-security-part-iv-the-xss-filter/
+* https://blogs.msdn.microsoft.com/ieinternals/2011/01/31/controlling-the-xss-filter/
+* https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29
+</details>
 
 #### `cache-busting` (common)
 
@@ -86,10 +118,14 @@ The requests should be answered with 403 errors when:
 * The above requests are made in the `.well-known` directory;
 * The requested file is known to contain sensitive data.
 
-_Ref:_
+<details>
+<summary>References</summary>
+
 * https://www.mnot.net/blog/2010/04/07/well-known
 * https://tools.ietf.org/html/rfc5785
 * https://feross.org/cmsploit/
+</details>
+
 
 #### `precompressed-files-(gzip|brotli)`
 
@@ -107,8 +143,11 @@ The redirection should follow the following paths:
 * Redirect to www/no-www whichever the connexion is secure or not.
 * Always redirect HTTP to HTTPS whatever is the host if secure alternatives exists;
 
-_Ref:_
+<details>
+<summary>References</summary>
+
 * https://observatory.mozilla.org/faq/
+</details>
 
 #### `ssl`
 
@@ -121,13 +160,16 @@ The requests should be served with:
 * A secure protocol (HTTP/2);
 * With a well formatted HSTS header.
 
-_Ref:_
+<details>
+<summary>References</summary>
+
 * https://wiki.mozilla.org/Security/Server_Side_TLS#Recommended_configurations
 * https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
 * https://tools.ietf.org/html/rfc6797#section-6.1
 * https://www.html5rocks.com/en/tutorials/security/transport-layer-security/
 * https://blogs.msdn.microsoft.com/ieinternals/2014/08/18/strict-transport-security/
 * https://tools.ietf.org/html/rfc7540
+</details>
 
 #### `benchmark`
 
