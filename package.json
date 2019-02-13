@@ -27,7 +27,8 @@
       "bin/pre-fixtures"
     ],
     "globals": [
-      "open"
+      "open",
+      "__ENV"
     ]
   }
 }
