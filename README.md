@@ -85,7 +85,7 @@ The requested file should be serve exactly as expected, all HTTP headers should 
 * https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29
 </details>
 
-#### `cache-busting` (common)
+#### `cache-busting`
 
 Check if cache-busting is working.
 
