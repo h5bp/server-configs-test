@@ -4,6 +4,7 @@
     "domain": "http://server.localhost/",
     "default": {
       "requestHeaders": {
+        "Origin": "http://",
         "Accept-Encoding": "gzip, deflate"
       }
     },
