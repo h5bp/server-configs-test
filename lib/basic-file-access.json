@@ -137,12 +137,6 @@
         }
       },
       {
-        "target": "test-schema.json",
-        "responseHeaders": {
-          "Cache-Control": "max-age=0, no-transform"
-        }
-      },
-      {
         "target": "test.jsonld",
         "responseHeaders": {
           "Cache-Control": "max-age=0, no-transform"
