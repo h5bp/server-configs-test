@@ -1,6 +1,6 @@
 [
   {
-    "name": "files are served compressed using precompressed files",
+    "name": "files are served compressed using brotli precompressed files",
     "domain": "http://server.localhost/",
     "default": {
       "requestHeaders": {
