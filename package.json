@@ -9,17 +9,17 @@
     "fixtures"
   ],
   "scripts": {
-    "test": "standard",
+    "lint": "standard",
     "build": "node ./bin/generate-fixtures.js"
   },
   "dependencies": {
-    "compressible": "^2.0.15",
-    "fs-extra": "^7.0.1",
+    "compressible": "^2.0.17",
+    "fs-extra": "^8.1.0",
     "k6": "0.0.0",
-    "mime-types": "^2.1.21"
+    "mime-types": "^2.1.24"
   },
   "devDependencies": {
-    "standard": "^12.0.1"
+    "standard": "^13.1.0"
   },
   "standard": {
     "ignore": [
