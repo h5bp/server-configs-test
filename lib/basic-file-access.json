@@ -28,7 +28,8 @@
       {
         "target": "test.atom",
         "responseHeaders": {
-          "Cache-Control": "max-age=3600"
+          "Cache-Control": "max-age=3600",
+          "Content-Security-Policy": true
         }
       },
       {
@@ -129,6 +130,7 @@
         "target": "test.js",
         "responseHeaders": {
           "Cache-Control": "max-age=31536000",
+          "Content-Security-Policy": true,
           "Content-Type": "text/javascript; charset=utf-8"
         }
       },
@@ -173,6 +175,7 @@
         "target": "test.mjs",
         "responseHeaders": {
           "Cache-Control": "max-age=31536000",
+          "Content-Security-Policy": true,
           "Content-Type": "text/javascript; charset=utf-8"
         }
       },
@@ -201,7 +204,12 @@
           "Access-Control-Allow-Origin": "*"
         }
       },
-      "test.pdf",
+      {
+        "target": "test.pdf",
+        "responseHeaders": {
+          "Content-Security-Policy": true
+        }
+      },
       {
         "target": "test.png",
         "requestHeaders": {
@@ -214,13 +222,15 @@
       {
         "target": "test.rdf",
         "responseHeaders": {
-          "Cache-Control": "max-age=3600"
+          "Cache-Control": "max-age=3600",
+          "Content-Security-Policy": true
         }
       },
       {
         "target": "test.rss",
         "responseHeaders": {
-          "Cache-Control": "max-age=3600"
+          "Cache-Control": "max-age=3600",
+          "Content-Security-Policy": true
         }
       },
       {
@@ -235,7 +245,8 @@
           "Origin": "http://"
         },
         "responseHeaders": {
-          "Access-Control-Allow-Origin": "*"
+          "Access-Control-Allow-Origin": "*",
+          "Content-Security-Policy": true
         }
       },
       {
@@ -244,7 +255,8 @@
           "Origin": "http://"
         },
         "responseHeaders": {
-          "Access-Control-Allow-Origin": "*"
+          "Access-Control-Allow-Origin": "*",
+          "Content-Security-Policy": true
         }
       },
       "test.swf",
@@ -325,7 +337,8 @@
       {
         "target": "test.xml",
         "responseHeaders": {
-          "Cache-Control": "max-age=0"
+          "Cache-Control": "max-age=0",
+          "Content-Security-Policy": true
         }
       },
       "test.xpi"
