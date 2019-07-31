@@ -2,7 +2,7 @@ language: node_js
 node_js: node
 
 env:
-  - K6_VERSION="0.24.0"
+  - K6_VERSION="0.25.0"
 
 before_install:
   - curl -sSL "https://github.com/loadimpact/k6/releases/download/v${K6_VERSION}/k6-v${K6_VERSION}-linux64.tar.gz" | tar -xz
