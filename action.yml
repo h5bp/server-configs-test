@@ -1,0 +1,9 @@
+name: 'Test Server Config'
+description: 'Test scripts for server validation'
+inputs:
+  tests:
+    description: 'test-suites names'
+    required: false
+runs:
+  using: 'node12'
+  main: 'index.js'
