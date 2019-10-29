@@ -1,0 +1,30 @@
+name: Node CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+        k6-version: [0.25.1]
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: |
+          curl -sSL "https://github.com/loadimpact/k6/releases/download/v${K6_VERSION}/k6-v${K6_VERSION}-linux64.tar.gz" | tar -xz
+          mv "k6-v${K6_VERSION}-linux64/k6" bin/k6
+        env:
+          K6_VERSION: ${{ matrix.k6-version }}
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm run lint
+  #    - run: npm test
+  #    - uses: ./
