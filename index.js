@@ -1,3 +1,4 @@
+const path = require('path')
 const core = require('@actions/core')
 const exec = require('@actions/exec')
 
@@ -13,7 +14,7 @@ async function run () {
       ]
     }
 
-    await exec.exec('./bin/k6', args)
+    await exec.exec(path.join(process.cwd(), 'bin/k6'), args)
   } catch (error) {
     core.setFailed(error.message)
   }

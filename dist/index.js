@@ -634,6 +634,7 @@ module.exports = require("os");
 /***/ 104:
 /***/ (function(__unusedmodule, __unusedexports, __webpack_require__) {
 
+const path = __webpack_require__(622)
 const core = __webpack_require__(470)
 const exec = __webpack_require__(986)
 
@@ -649,7 +650,7 @@ async function run () {
       ]
     }
 
-    await exec.exec('./bin/k6', args)
+    await exec.exec(path.join(process.cwd(), 'bin/k6'), args)
   } catch (error) {
     core.setFailed(error.message)
   }
