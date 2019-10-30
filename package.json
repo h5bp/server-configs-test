@@ -11,6 +11,7 @@
   "scripts": {
     "lint": "standard",
     "build": "node ./bin/generate-fixtures.js",
+    "package": "ncc build index.js -o dist",
     "test": "jest"
   },
   "dependencies": {
@@ -22,13 +23,15 @@
     "mime-types": "^2.1.24"
   },
   "devDependencies": {
+    "@zeit/ncc": "^0.20.5",
     "jest": "^24.9.0",
     "standard": "^14.3.1"
   },
   "standard": {
     "ignore": [
       "fixtures",
-      "bin/pre-fixtures"
+      "bin/pre-fixtures",
+      "dist"
     ],
     "globals": [
       "open",
