@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         node-version: [12.x]
-        k6-version: [0.25.1]
+        k6-version: [0.26.0]
 
     steps:
       - uses: actions/checkout@v1
