@@ -5,13 +5,18 @@ const exec = require('@actions/exec')
 async function run () {
   try {
     console.log('Running k6 tests')
+    let args
     const ut = core.getInput('tests')
-    let args = ['run', 'lib/index.js']
-    if (Array.isArray(ut) && ut.length > 0) {
-      args += [
-        '-e',
-        `TESTS=${ut.join(':')}`
-      ]
+    if (!ut) {
+      args = ['version']
+    } else {
+      args = ['run', 'lib/index.js']
+      if (Array.isArray(ut) && ut.length > 0) {
+        args += [
+          '-e',
+          `TESTS=${ut.join(':')}`
+        ]
+      }
     }
 
     await exec.exec(path.join(process.cwd(), 'bin/k6'), args)

@@ -1,9 +1,9 @@
-name: 'Test Server Config'
-description: 'Test scripts for server validation'
+name: Test Server Config
+description: Test scripts for server validation
 inputs:
   tests:
-    description: 'test-suites names'
+    description: test-suites names
     required: false
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: node12
+  main: dist/index.js

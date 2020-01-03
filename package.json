@@ -12,7 +12,7 @@
     "lint": "standard",
     "build": "node ./bin/generate-fixtures.js",
     "package": "ncc build index.js -o dist",
-    "test": "jest"
+    "test": "jest index.test.js"
   },
   "dependencies": {
     "@actions/core": "^1.1.1",
