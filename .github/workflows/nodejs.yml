@@ -18,9 +18,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - uses: actions/download-artifact@v1
+      - name: Cache NPM
+        id: cache-npm
+        uses: actions/cache@v1
         with:
-          name: npm
+          path: node_modules
+          key: ${{ matrix.node-version }}-npm
       - run: |
           curl -sSL "https://github.com/loadimpact/k6/releases/download/v${K6_VERSION}/k6-v${K6_VERSION}-linux64.tar.gz" | tar -xz
           mv "k6-v${K6_VERSION}-linux64/k6" bin/k6
@@ -31,8 +34,3 @@ jobs:
       - run: npm run lint
       - run: npm test
       - uses: ./
-      - name: Upload artifact
-        uses: actions/upload-artifact@v1.0.0
-        with:
-          name: npm
-          path: node_modules
