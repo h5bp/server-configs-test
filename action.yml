@@ -1,9 +1,55 @@
 name: Test Server Config
 description: Test scripts for server validation
+author: H5BP
 inputs:
-  tests:
-    description: test-suites names
+  version:
+    description: Print k6 version
     required: false
+    default: 'false'
+  basic-file-access:
+    description: Check file access
+    required: false
+    default: 'true'
+  caching:
+    description: Check file features
+    required: false
+    default: 'true'
+  cache-busting:
+    description: Check file features
+    required: false
+    default: 'true'
+  concatenation:
+    description: Check file features
+    required: false
+    default: 'true'
+  custom-errors:
+    description: Check custom errors
+    required: false
+    default: 'true'
+  forbidden-files:
+    description: Check file access
+    required: false
+    default: 'true'
+  rewrites:
+    description: Check rewrites
+    required: false
+    default: 'true'
+  ssl:
+    description: Check security
+    required: false
+    default: 'true'
+  enforce-gzip:
+    description: Check files are served compressed
+    required: false
+    default: 'true'
+  precompressed-files-gzip:
+    description: Check files are served compressed
+    required: false
+    default: 'true'
+  precompressed-files-brotli:
+    description: Check files are served compressed
+    required: false
+    default: 'true'
 runs:
   using: node12
   main: dist/index.js

@@ -20,7 +20,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: |
+      - name: Download k6 ${{ matrix.k6-version }}
+        run: |
           curl -sSL "https://github.com/loadimpact/k6/releases/download/v${K6_VERSION}/k6-v${K6_VERSION}-linux64.tar.gz" | tar -xz
           mv "k6-v${K6_VERSION}-linux64/k6" bin/k6
         env:
