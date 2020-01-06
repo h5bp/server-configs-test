@@ -23,7 +23,7 @@
     "mime-types": "^2.1.26"
   },
   "devDependencies": {
-    "@zeit/ncc": "^0.20.5",
+    "@zeit/ncc": "^0.21.0",
     "jest": "^24.9.0",
     "standard": "^14.3.1"
   },
