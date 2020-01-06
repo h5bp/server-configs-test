@@ -20,7 +20,7 @@
     "compressible": "^2.0.17",
     "fs-extra": "^8.1.0",
     "k6": "0.0.0",
-    "mime-types": "^2.1.25"
+    "mime-types": "^2.1.26"
   },
   "devDependencies": {
     "@zeit/ncc": "^0.20.5",
