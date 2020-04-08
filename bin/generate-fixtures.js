@@ -5,6 +5,8 @@ const mime = require('mime-types')
 const compressible = require('compressible')
 const testSuites = require('../lib/basic-file-access.json')
 
+const outputDir = 'dist/fixtures'
+
 const errorCb = (err) => {
   if (err) throw err
 }
@@ -23,23 +25,23 @@ for (const suite of testSuites) {
     if (request.responseHeaders) {
       content = Object.assign(content, request.responseHeaders)
     }
-    fs.outputJsonSync(`fixtures/${file}`, content)
+    fs.outputJsonSync(`${outputDir}/${file}`, content)
   }
 }
 
-fs.outputFile('fixtures/test.svgz', zlib.gzipSync(fs.readFileSync('fixtures/test.svgz')), errorCb)
+fs.outputFile(`${outputDir}/test.svgz`, zlib.gzipSync(fs.readFileSync(`${outputDir}/test.svgz`)), errorCb)
 
 for (const folder of ['/', '.well-known/', '.well-known/test/']) {
-  fs.outputFile(`fixtures/${folder}.hidden_directory/test.html`, '', errorCb)
+  fs.outputFile(`${outputDir}/${folder}.hidden_directory/test.html`, '', errorCb)
 }
 
-fs.outputFile('fixtures/test-pre-gzip.js.gz', zlib.gzipSync(JSON.stringify({
+fs.outputFile(`${outputDir}/test-pre-gzip.js.gz`, zlib.gzipSync(JSON.stringify({
   'Content-Type': 'text/javascript; charset=utf-8',
   'Content-Encoding': 'gzip'
 })), errorCb)
-fs.outputFile('fixtures/test-pre-brotli.js.br', zlib.brotliCompressSync(JSON.stringify({
+fs.outputFile(`${outputDir}/test-pre-brotli.js.br`, zlib.brotliCompressSync(JSON.stringify({
   'Content-Type': 'text/javascript; charset=utf-8',
   'Content-Encoding': 'br'
 })), errorCb)
 
-fs.copy(path.join(__dirname, 'pre-fixtures'), 'fixtures', errorCb)
+fs.copy(path.join(__dirname, 'pre-fixtures'), outputDir, errorCb)

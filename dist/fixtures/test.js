@@ -1,0 +1,1 @@
+{"Content-Type":"text/javascript; charset=utf-8","Content-Encoding":"gzip","Access-Control-Allow-Origin":null,"Cache-Control":"max-age=31536000, no-transform","Content-Security-Policy":true,"Referrer-Policy":null,"X-Content-Type-Options":"nosniff","X-Powered-By":null,"X-Frame-Options":null,"X-Ua-Compatible":null,"X-Xss-Protection":null}
