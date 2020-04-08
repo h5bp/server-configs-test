@@ -1,0 +1,1 @@
+{"Content-Type":"text/markdown; charset=utf-8","Content-Encoding":"gzip","Access-Control-Allow-Origin":null,"Cache-Control":"max-age=0, no-transform","Content-Security-Policy":null,"Referrer-Policy":null,"X-Content-Type-Options":"nosniff","X-Powered-By":null,"X-Frame-Options":null,"X-Ua-Compatible":null,"X-Xss-Protection":null}
