@@ -63,9 +63,8 @@ async function action () {
   core.endGroup()
 
   // ------
-  let proc
   try {
-    proc = await exec.exec('k6', args)
+    await exec.exec('k6', args)
   } catch (e) {
     core.setFailed(e.message)
   }
@@ -83,8 +82,6 @@ async function action () {
     path.join(__dirname, '..'),
     { continueOnError: true }
   )
-
-  process.exit(proc.status)
 }
 
 action()
