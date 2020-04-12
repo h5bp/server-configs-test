@@ -9810,6 +9810,9 @@ async function action () {
   } else {
     core.setFailed('Invalid command')
   }
+  if (core.isDebug()) {
+    k6Args.push('--http-debug')
+  }
   k6Args.push('--out', `json=${path.join(__dirname, '../sct-results.json')}`)
   core.endGroup()
 
