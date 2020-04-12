@@ -9824,6 +9824,7 @@ async function action () {
   core.startGroup('Shutting down server and dumping logs')
   await exec.exec('docker', ['logs', 'server'])
   await exec.exec('docker', ['kill', 'server'])
+  await exec.exec('docker', ['rm', 'server'])
   core.endGroup()
 
   // ------
