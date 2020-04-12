@@ -9752,20 +9752,30 @@ const artifact = __webpack_require__(214)
 async function action () {
   // ------
   core.startGroup('Starting server container')
+  const serverArgs = [
+    '-v', `${path.join(__dirname, 'fixtures')}:${core.getInput('root-path', { required: true })}`
+  ]
+  if (core.getInput('certs-path')) {
+    serverArgs.push('-v', `${path.join(__dirname, '../certs')}:${core.getInput('certs-path')}`)
+  } else {
+    core.warning('certs-path was not set')
+  }
+  const volumes = core.getInput('configs-volumes')
+    .split(';')
+    .filter(val => val !== '')
+    .map(vlm => ['-v', `${process.cwd()}/${vlm}`])
+  if (volumes.length) {
+    serverArgs.push(...volumes.flat())
+  }
+  serverArgs.push(core.getInput('server', { required: true }))
+
   try {
     await exec.exec('docker', [
       'run',
       '--detach',
       '--network', 'host',
       '--name', 'server',
-      '-v', `${path.join(__dirname, 'fixtures')}:${core.getInput('root-path', { required: true })}`,
-      '-v', `${path.join(__dirname, '../certs')}:${core.getInput('certs-path', { required: true })}`,
-      ...core.getInput('configs-volumes')
-        .split(';')
-        .filter(val => val !== '')
-        .map(vlm => ['-v', `${process.cwd()}/${vlm}`])
-        .flat(),
-      core.getInput('server', { required: true })
+      ...serverArgs
     ])
   } catch (e) {
     core.setFailed(e.message)
@@ -9788,24 +9798,24 @@ async function action () {
   core.addPath(k6Path)
   // ---
   core.debug('Build k6 arguments')
-  const args = ['run']
+  const k6Args = ['run']
   const command = core.getInput('command', { required: true })
   if (command === 'test') {
-    args.push(
+    k6Args.push(
       path.join(__dirname, '../lib/index.js'),
       '-e', `TESTS=${core.getInput('tests')}`
     )
   } else if (command === 'benchmark') {
-    args.push(path.join(__dirname, '../lib/benchmark.js'))
+    k6Args.push(path.join(__dirname, '../lib/benchmark.js'))
   } else {
     core.setFailed('Invalid command')
   }
-  args.push('--out', `json=${path.join(__dirname, '../sct-results.json')}`)
+  k6Args.push('--out', `json=${path.join(__dirname, '../sct-results.json')}`)
   core.endGroup()
 
   // ------
   try {
-    await exec.exec('k6', args)
+    await exec.exec('k6', k6Args)
   } catch (e) {
     core.setFailed(e.message)
   }
