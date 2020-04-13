@@ -10,6 +10,39 @@
 This repository contains unit tests suites helping validate correctness of a server.
 Some steps are require to make them ready to run.
 
+
+## Usage
+
+### GitHub Actions
+
+#### Pre-requisites
+Create a workflow `.yml` file in your repositories `.github/workflows` directory.
+An [example workflow](#example-workflow) is available below.
+For more information, reference the GitHub Help Documentation for
+[Creating a workflow file](https://help.github.com/en/articles/configuring-a-workflow#creating-a-workflow-file).
+
+#### Inputs
+See [action.yml](action.yml).
+For more information on these inputs, see the [API Documentation](https://developer.github.com/v3/repos/releases/#input-2).
+
+#### Example workflow
+
+```yaml
+steps:
+  - uses: actions/checkout@v
+  - name: Test with server-configs-test
+    uses: h5bp/server-configs-test@feat/gha-v2
+    with:
+      command: test
+      server: nginx
+      root-path: /var/www/server.localhost
+      certs-path: /etc/nginx/certs
+      configs-volumes: test/vhosts:/etc/nginx/conf.d;h5bp:/etc/nginx/h5bp;nginx.conf:/etc/nginx/nginx.conf;mime.types:/etc/nginx/mime.types
+      tests: basic-file-access;caching;cache-busting;custom-errors;forbidden-files;precompressed-files-gzip;rewrites;ssl
+```
+
+### Standalone
+
 * Get the files ready by either:
   * Downloading [latest release](https://github.com/h5bp/server-configs-test/releases/latest) build
   * Generating fixtures
@@ -29,7 +62,7 @@ Some steps are require to make them ready to run.
 * Run the units (see [Usage](#usage))
 
 
-## Usage
+### Tests
 
 To run all tests, execute:
 
@@ -37,15 +70,14 @@ To run all tests, execute:
 $ k6 run lib/index.js
 ```
 
-To run only specific tests, use the environment variable `TESTS` with all wanted test names separated by `:` as value.
+To run only specific tests, use the environment variable `TESTS` with all wanted
+test names separated by `:` as value.
 
 The environment variable can be passed as an argument:
 
 ```sh
 $ k6 run lib/index.js -e TESTS=basic-file-access:rewrites
 ```
-
-### Tests
 
 #### `basic-file-access`
    
@@ -89,13 +121,15 @@ The requested file should be serve exactly as expected, all HTTP headers should 
 
 Check if cache-busting is working.
 
-The requests that contain a hashed-key extension prefix (`[name].[hash].[ext]`) should serve the target file correctly.
+The requests that contain a hashed-key extension prefix (`[name].[hash].[ext]`)
+should serve the target file correctly.
 
 #### `concatenation`
 
 Check if concatenation is working.
 
-The requests for `[name].combined.[ext]` should be served as a concatenation of the `a.[ext]` and `b.[ext]` files.
+The requests for `[name].combined.[ext]` should be served as a concatenation of 
+he `a.[ext]` and `b.[ext]` files.
 
 #### `custom-errors`
 
@@ -225,7 +259,8 @@ the [guidelines](.github/CONTRIBUTING.md):
 
 ## Acknowledgements
 
-[Test Server Configs](https://github.com/h5bp/server-configs-test) is only possible thanks to all the awesome
+[Test Server Configs](https://github.com/h5bp/server-configs-test) is
+only possible thanks to all the awesome
 [contributors](https://github.com/h5bp/server-configs-test/graphs/contributors)!
 
 
