@@ -31,7 +31,7 @@ For more information on these inputs, see the [API Documentation](https://develo
 steps:
   - uses: actions/checkout@v
   - name: Test with server-configs-test
-    uses: h5bp/server-configs-test@feat/gha-v2
+    uses: h5bp/server-configs-test@master
     with:
       command: test
       server: nginx
@@ -83,7 +83,7 @@ $ k6 run lib/index.js -e TESTS=basic-file-access:rewrites
    
 Check if all common files are served correctly.
 
-The requested file should be serve exactly as expected, all HTTP headers should be valid.
+The requested file should be served exactly as expected, all HTTP headers should be valid.
 
 <details>
 <summary>References</summary>
