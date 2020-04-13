@@ -9,6 +9,11 @@ const exec = require('@actions/exec')
 const artifact = require('@actions/artifact')
 
 async function action () {
+  const command = core.getInput('command', { required: true })
+  if (command !== 'test' && command !== 'benchmark') {
+    core.setFailed('Invalid command')
+  }
+
   // ------
   core.startGroup('Starting server container')
   const serverArgs = [
@@ -58,7 +63,6 @@ async function action () {
   // ---
   core.debug('Build k6 arguments')
   const k6Args = ['run']
-  const command = core.getInput('command', { required: true })
   if (command === 'test') {
     k6Args.push(
       path.join(__dirname, '../lib/index.js'),
@@ -66,10 +70,8 @@ async function action () {
     )
   } else if (command === 'benchmark') {
     k6Args.push(path.join(__dirname, '../lib/benchmark.js'))
-  } else {
-    core.setFailed('Invalid command')
   }
-  if (core.isDebug()) {
+  if (core.isDebug() && command !== 'benchmark') {
     k6Args.push('--http-debug')
   }
   k6Args.push('--out', `json=${path.join(__dirname, '../sct-results.json')}`)
@@ -84,7 +86,9 @@ async function action () {
 
   // ------
   core.startGroup('Shutting down server and dumping logs')
-  await exec.exec('docker', ['logs', 'server'])
+  if (command !== 'benchmark') {
+    await exec.exec('docker', ['logs', 'server'])
+  }
   await exec.exec('docker', ['kill', 'server'])
   await exec.exec('docker', ['rm', 'server'])
   core.endGroup()
