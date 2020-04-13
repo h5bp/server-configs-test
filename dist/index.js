@@ -9778,7 +9778,8 @@ async function action () {
     await exec.exec('docker', [
       'run',
       '--detach',
-      '--network', 'host',
+      '-p', '80:80',
+      '-p', '443:443',
       '--name', 'server',
       ...serverArgs
     ])
