@@ -1,6 +1,6 @@
 # [Test Server Configs](https://github.com/h5bp/server-configs-test)
 
-[![Build Status](https://img.shields.io/travis/h5bp/server-configs-test/master.svg)](https://travis-ci.org/h5bp/server-configs-test)
+[![Lint](https://github.com/h5bp/server-configs-test/workflows/Lint/badge.svg)](https://github.com/h5bp/server-configs-test/actions?query=workflow%3ALint)
 
 **Test Server Configs** is a collection of test scripts for server validation.
 
