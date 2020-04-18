@@ -9816,7 +9816,13 @@ async function action () {
   if (core.isDebug() && command !== 'benchmark') {
     k6Args.push('--http-debug')
   }
-  k6Args.push('--out', `json=${path.join(__dirname, '../sct-results.json')}`)
+  k6Args.push(
+    '--summary-export', `json=${path.join(__dirname, '../sct-summary.json')}`,
+    '--out', `json=${path.join(__dirname, '../sct-results.json')}`
+  )
+  if (process.env.K6_CLOUD_TOKEN) {
+    k6Args.push('--out', 'cloud')
+  }
   core.endGroup()
 
   // ------
@@ -9838,7 +9844,10 @@ async function action () {
   // ------
   await artifact.create().uploadArtifact(
     `sct-${command}-results`,
-    [path.join(__dirname, '../sct-results.json')],
+    [
+      path.join(__dirname, '../sct-results.json'),
+      path.join(__dirname, '../sct-summary.json')
+    ],
     path.join(__dirname, '..'),
     { continueOnError: true }
   )
