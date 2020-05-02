@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@zeit/ncc": "^0.22.1",
-    "jest": "^25.5.3",
+    "jest": "^25.5.4",
     "standard": "^14.3.3"
   },
   "standard": {
