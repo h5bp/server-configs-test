@@ -76,7 +76,7 @@ async function action () {
     k6Args.push('--http-debug')
   }
   k6Args.push(
-    '--summary-export', `json=${path.join(__dirname, '../sct-summary.json')}`,
+    '--summary-export', path.join(__dirname, '../sct-summary.json'),
     '--out', `json=${path.join(__dirname, '../sct-results.json')}`
   )
   if (process.env.K6_CLOUD_TOKEN) {
