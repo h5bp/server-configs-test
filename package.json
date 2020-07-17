@@ -10,7 +10,7 @@
     "@actions/artifact": "^0.3.2",
     "@actions/core": "^1.2.4",
     "@actions/exec": "^1.0.4",
-    "@actions/tool-cache": "^1.5.5",
+    "@actions/tool-cache": "^1.6.0",
     "compressible": "^2.0.18",
     "fs-extra": "^9.0.1",
     "k6": "0.0.0",
