@@ -90,7 +90,7 @@
           "Referrer-Policy": "strict-origin-when-cross-origin",
           "X-Frame-Options": "DENY",
           "X-Ua-Compatible": "IE=edge",
-          "X-Xss-Protection": "1; mode=block"
+          "X-Xss-Protection": "0"
         }
       },
       {
@@ -392,7 +392,7 @@
         "Referrer-Policy": "strict-origin-when-cross-origin",
         "X-Frame-Options": "DENY",
         "X-Ua-Compatible": "IE=edge",
-        "X-Xss-Protection": "1; mode=block",
+        "X-Xss-Protection": "0",
         "Content-Type": "text/html; charset=utf-8",
         "Content-Encoding": "gzip"
       }
