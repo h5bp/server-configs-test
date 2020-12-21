@@ -7,7 +7,7 @@
     "test": "jest index.test.js"
   },
   "dependencies": {
-    "@actions/artifact": "^0.4.2",
+    "@actions/artifact": "^0.5.0",
     "@actions/core": "^1.2.6",
     "@actions/exec": "^1.0.4",
     "@actions/tool-cache": "^1.6.1",
