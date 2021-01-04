@@ -14,7 +14,7 @@
     "compressible": "^2.0.18",
     "fs-extra": "^9.0.1",
     "k6": "0.0.0",
-    "mime-types": "^2.1.27"
+    "mime-types": "^2.1.28"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.26.1",
