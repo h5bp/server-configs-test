@@ -34,6 +34,15 @@
         }
       },
       {
+        "target": "test.avif",
+        "requestHeaders": {
+          "Origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      {
         "target": "test.bmp",
         "requestHeaders": {
           "Origin": "http://"
