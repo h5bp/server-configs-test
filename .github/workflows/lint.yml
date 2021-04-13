@@ -22,7 +22,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           
       - name: Cache
-        uses: actions/cache@v2.1.4
+        uses: actions/cache@v2.1.5
         with:
           path: ~/.npm
           key: npm-${{ hashFiles('package-lock.json') }}
