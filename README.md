@@ -8,7 +8,7 @@
 ## Getting Started
 
 This repository contains unit tests suites helping validate correctness of a server.
-Some steps are require to make them ready to run.
+Some steps are required to make them ready to run.
 
 
 ## Usage
