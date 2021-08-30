@@ -17,7 +17,7 @@
     "mime-types": "^2.1.32"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.29.2",
+    "@vercel/ncc": "^0.30.0",
     "jest": "^27.1.0",
     "standard": "^16.0.3"
   },
