@@ -31,7 +31,7 @@ For more information on these inputs, see the [API Documentation](https://develo
 steps:
   - uses: actions/checkout@v
   - name: Test with server-configs-test
-    uses: h5bp/server-configs-test@master
+    uses: h5bp/server-configs-test@main
     with:
       command: test
       server: nginx
