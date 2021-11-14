@@ -8,7 +8,7 @@
       },
       "responseHeaders": {
         "Access-Control-Allow-Origin": null,
-        "Cache-Control": "max-age=2592000",
+        "Cache-Control": "max-age=31536000",
         "Content-Security-Policy": null,
         "Permissions-Policy": null,
         "Referrer-Policy": null,
@@ -63,7 +63,6 @@
       {
         "target": "test.css",
         "responseHeaders": {
-          "Cache-Control": "max-age=31536000",
           "Referrer-Policy": "strict-origin-when-cross-origin"
         }
       },
@@ -150,7 +149,6 @@
       {
         "target": "test.js",
         "responseHeaders": {
-          "Cache-Control": "max-age=31536000",
           "Content-Security-Policy": true,
           "Permissions-Policy": true,
           "Referrer-Policy": "strict-origin-when-cross-origin",
@@ -200,7 +198,6 @@
       {
         "target": "test.mjs",
         "responseHeaders": {
-          "Cache-Control": "max-age=31536000",
           "Content-Security-Policy": true,
           "Permissions-Policy": true,
           "Referrer-Policy": "strict-origin-when-cross-origin",
@@ -343,12 +340,7 @@
         }
       },
       "test.vtt",
-      {
-        "target": "test.wasm",
-        "responseHeaders": {
-          "Cache-Control": "max-age=31536000"
-        }
-      },
+      "test.wasm",
       {
         "target": "test.webapp",
         "responseHeaders": {
@@ -368,8 +360,7 @@
           "Origin": "http://"
         },
         "responseHeaders": {
-          "Access-Control-Allow-Origin": "*",
-          "Cache-Control": "max-age=2592000"
+          "Access-Control-Allow-Origin": "*"
         }
       },
       {
