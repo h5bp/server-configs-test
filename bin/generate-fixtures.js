@@ -14,7 +14,7 @@ const errorCb = (err) => {
 for (const suite of testSuites) {
   for (const request of suite.requests) {
     const file = request.target || request
-    const type = mime.contentType(file)
+    const type = request.responseHeaders?.['Content-Type'] || mime.contentType(file)
     let content = {
       'Content-Type': type || null,
       'Content-Encoding': compressible(type) ? 'gzip' : null

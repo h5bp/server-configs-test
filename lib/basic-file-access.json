@@ -217,12 +217,7 @@
       "test.oga",
       "test.ogg",
       "test.ogv",
-      {
-        "target": "test.opus",
-        "responseHeaders": {
-          "Content-Type": "audio/ogg"
-        }
-      },
+      "test.opus",
       {
         "target": "test.otf",
         "requestHeaders": {
