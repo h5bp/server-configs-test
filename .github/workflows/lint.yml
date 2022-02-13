@@ -11,16 +11,16 @@ jobs:
 
     strategy:
       matrix:
-        node-version: ['15.x']
+        node-version: ['lts/*']
 
     steps:
       - uses: actions/checkout@v2.4.0
-      
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2.5.1
         with:
           node-version: ${{ matrix.node-version }}
-          
+
       - name: Cache
         uses: actions/cache@v2.1.7
         with:
