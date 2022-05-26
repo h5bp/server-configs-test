@@ -74,6 +74,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build-files
+          path: dist
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.8.0
