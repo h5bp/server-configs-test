@@ -1,0 +1,11 @@
+# Automatically normalize line endings for all text-based files
+# https://git-scm.com/docs/gitattributes#_end_of_line_conversion
+
+* text=auto
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+/.git*          export-ignore
+bin/            export-ignore
+.npmrc          export-ignore
+package.json    export-ignore

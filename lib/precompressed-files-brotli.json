@@ -1,0 +1,12 @@
+[
+  {
+    "name": "files are served compressed using brotli precompressed files",
+    "domain": "http://server.localhost/",
+    "default": {
+      "requestHeaders": {
+        "Accept-Encoding": "br"
+      }
+    },
+    "requests": ["test-pre-brotli.js"]
+  }
+]

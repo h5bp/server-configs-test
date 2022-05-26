@@ -1,0 +1,34 @@
+name: Test Server Configs
+description: Test scripts for server validation
+author: H5BP
+branding:
+  color: orange
+  icon: check-circle
+inputs:
+  k6-version:
+    description: "The k6 version to use (default: 0.38.1)"
+    required: false
+    default: "0.38.1"
+  command:
+    description: The server-configs-test command to run (test or benchmark)
+    required: false
+    default: test
+  server:
+    description: The server Docker image to use as server software
+    required: true
+  root-path:
+    description: The server root path where reachable files should be stored
+    required: true
+  certs-path:
+    description: The certs files path to match server certificates configuration
+    required: true
+  configs-volumes:
+    description: Semicolon-separated configs volume to mount on server container
+    required: true
+  tests:
+    description: "Semicolon-separated tests to run (default: '')"
+    required: false
+    default: ''
+runs:
+  using: node16
+  main: dist/index.js

@@ -1,0 +1,12 @@
+[
+  {
+    "name": "files are served compressed using gzip precompressed files",
+    "domain": "http://server.localhost/",
+    "default": {
+      "requestHeaders": {
+        "Accept-Encoding": "gzip"
+      }
+    },
+    "requests": ["test-pre-gzip.js"]
+  }
+]

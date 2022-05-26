@@ -1,0 +1,443 @@
+[
+  {
+    "name": "files are served with the correct HTTP response headers",
+    "domain": "http://server.localhost/",
+    "default": {
+      "requestHeaders": {
+        "Accept-Encoding": "gzip, deflate, sdch"
+      },
+      "responseHeaders": {
+        "Access-Control-Allow-Origin": null,
+        "Cache-Control": "max-age=31536000",
+        "Content-Security-Policy": null,
+        "Permissions-Policy": null,
+        "Referrer-Policy": null,
+        "Cross-Origin-Embedder-Policy": null,
+        "Cross-Origin-Opener-Policy": null,
+        "Cross-Origin-Resource-Policy": null,
+        "X-Content-Type-Options": "nosniff",
+        "X-Powered-By": null,
+        "X-Frame-Options": null,
+        "X-Ua-Compatible": null,
+        "X-Xss-Protection": null
+      }
+    },
+    "requests": [
+      {
+        "target": "test.appcache",
+        "responseHeaders": {
+          "Cache-Control": "max-age=0"
+        }
+      },
+      {
+        "target": "test.atom",
+        "responseHeaders": {
+          "Cache-Control": "max-age=3600",
+          "Content-Security-Policy": true,
+          "Permissions-Policy": true,
+          "Referrer-Policy": "strict-origin-when-cross-origin",
+          "Cross-Origin-Embedder-Policy": "require-corp",
+          "Cross-Origin-Opener-Policy": "same-origin",
+          "Cross-Origin-Resource-Policy": "same-origin"
+        }
+      },
+      {
+        "target": "test.avif",
+        "requestHeaders": {
+          "Origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      {
+        "target": "test.bmp",
+        "requestHeaders": {
+          "Origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      "test.crx",
+      {
+        "target": "test.css",
+        "responseHeaders": {
+          "Referrer-Policy": "strict-origin-when-cross-origin"
+        }
+      },
+      {
+        "target": "test.eot",
+        "requestHeaders": {
+          "Origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      {
+        "target": "test.f4v",
+        "responseHeaders": {
+          "Content-Type": "video/mp4"
+        }
+      },
+      "test.flv",
+      {
+        "target": "test.geojson",
+        "responseHeaders": {
+          "Cache-Control": "max-age=0"
+        }
+      },
+      {
+        "target": "test.gif",
+        "requestHeaders": {
+          "Origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      "test.htc",
+      {
+        "target": "test.html",
+        "responseHeaders": {
+          "Cache-Control": "max-age=0",
+          "Content-Security-Policy": true,
+          "Permissions-Policy": true,
+          "Referrer-Policy": "strict-origin-when-cross-origin",
+          "Cross-Origin-Embedder-Policy": "require-corp",
+          "Cross-Origin-Opener-Policy": "same-origin",
+          "Cross-Origin-Resource-Policy": "same-origin",
+          "X-Frame-Options": "DENY"
+        }
+      },
+      {
+        "target": "test.ico",
+        "requestHeaders": {
+          "Origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*",
+          "Cache-Control": "max-age=604800",
+          "Content-Type": "image/x-icon"
+        }
+      },
+      {
+        "target": "test.ics",
+        "responseHeaders": {
+          "Cache-Control": "max-age=0"
+        }
+      },
+      {
+        "target": "test.jpeg",
+        "requestHeaders": {
+          "Origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      {
+        "target": "test.jpg",
+        "requestHeaders": {
+          "Origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      {
+        "target": "test.js",
+        "responseHeaders": {
+          "Content-Security-Policy": true,
+          "Permissions-Policy": true,
+          "Referrer-Policy": "strict-origin-when-cross-origin",
+          "Cross-Origin-Embedder-Policy": "require-corp",
+          "Cross-Origin-Opener-Policy": "same-origin",
+          "Cross-Origin-Resource-Policy": "same-origin",
+          "Content-Type": "text/javascript; charset=utf-8"
+        }
+      },
+      {
+        "target": "test.json",
+        "responseHeaders": {
+          "Cache-Control": "max-age=0"
+        }
+      },
+      {
+        "target": "test.jsonld",
+        "responseHeaders": {
+          "Cache-Control": "max-age=0"
+        }
+      },
+      "test.m4a",
+      {
+        "target": "test.m4v",
+        "responseHeaders": {
+          "Content-Type": "video/mp4"
+        }
+      },
+      {
+        "target": "test.map",
+        "responseHeaders": {
+          "Cache-Control": "max-age=0"
+        }
+      },
+      {
+        "target": "test.markdown",
+        "responseHeaders": {
+          "Cache-Control": "max-age=0"
+        }
+      },
+      {
+        "target": "test.md",
+        "responseHeaders": {
+          "Cache-Control": "max-age=0"
+        }
+      },
+      {
+        "target": "test.mjs",
+        "responseHeaders": {
+          "Content-Security-Policy": true,
+          "Permissions-Policy": true,
+          "Referrer-Policy": "strict-origin-when-cross-origin",
+          "Cross-Origin-Embedder-Policy": "require-corp",
+          "Cross-Origin-Opener-Policy": "same-origin",
+          "Cross-Origin-Resource-Policy": "same-origin",
+          "Content-Type": "text/javascript; charset=utf-8"
+        }
+      },
+      "test.mp4",
+      {
+        "target": "test.oex",
+        "responseHeaders": {
+          "Content-Type": "application/x-opera-extension"
+        }
+      },
+      "test.oga",
+      "test.ogg",
+      "test.ogv",
+      "test.opus",
+      {
+        "target": "test.otf",
+        "requestHeaders": {
+          "Origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      {
+        "target": "test.pdf",
+        "responseHeaders": {
+          "Content-Security-Policy": true,
+          "Permissions-Policy": true,
+          "Referrer-Policy": "strict-origin-when-cross-origin",
+          "Cross-Origin-Embedder-Policy": "require-corp",
+          "Cross-Origin-Opener-Policy": "same-origin",
+          "Cross-Origin-Resource-Policy": "same-origin"
+        }
+      },
+      {
+        "target": "test.png",
+        "requestHeaders": {
+          "Origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      {
+        "target": "test.rdf",
+        "responseHeaders": {
+          "Cache-Control": "max-age=3600",
+          "Content-Security-Policy": true,
+          "Permissions-Policy": true,
+          "Referrer-Policy": "strict-origin-when-cross-origin",
+          "Cross-Origin-Embedder-Policy": "require-corp",
+          "Cross-Origin-Opener-Policy": "same-origin",
+          "Cross-Origin-Resource-Policy": "same-origin"
+        }
+      },
+      {
+        "target": "test.rss",
+        "responseHeaders": {
+          "Cache-Control": "max-age=3600",
+          "Content-Security-Policy": true,
+          "Permissions-Policy": true,
+          "Referrer-Policy": "strict-origin-when-cross-origin",
+          "Cross-Origin-Embedder-Policy": "require-corp",
+          "Cross-Origin-Opener-Policy": "same-origin",
+          "Cross-Origin-Resource-Policy": "same-origin"
+        }
+      },
+      {
+        "target": "test.safariextz",
+        "responseHeaders": {
+          "Content-Type": false
+        }
+      },
+      {
+        "target": "test.svg",
+        "requestHeaders": {
+          "Origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Security-Policy": true,
+          "Permissions-Policy": true,
+          "Referrer-Policy": "strict-origin-when-cross-origin",
+          "Cross-Origin-Embedder-Policy": "require-corp",
+          "Cross-Origin-Opener-Policy": "same-origin",
+          "Cross-Origin-Resource-Policy": "same-origin"
+        }
+      },
+      {
+        "target": "test.svgz",
+        "requestHeaders": {
+          "Origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Security-Policy": true,
+          "Permissions-Policy": true,
+          "Referrer-Policy": "strict-origin-when-cross-origin",
+          "Cross-Origin-Embedder-Policy": "require-corp",
+          "Cross-Origin-Opener-Policy": "same-origin",
+          "Cross-Origin-Resource-Policy": "same-origin"
+        }
+      },
+      "test.swf",
+      {
+        "target": "test.ttc",
+        "requestHeaders": {
+          "Origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      {
+        "target": "test.ttf",
+        "requestHeaders": {
+          "Origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      "test.txt",
+      "test.vcard",
+      {
+        "target": "test.vcf",
+        "responseHeaders": {
+          "Content-Type": "text/vcard; charset=utf-8"
+        }
+      },
+      "test.vtt",
+      "test.wasm",
+      {
+        "target": "test.webapp",
+        "responseHeaders": {
+          "Cache-Control": "max-age=0"
+        }
+      },
+      "test.webm",
+      {
+        "target": "test.webmanifest",
+        "responseHeaders": {
+          "Cache-Control": "max-age=604800"
+        }
+      },
+      {
+        "target": "test.webp",
+        "requestHeaders": {
+          "Origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      {
+        "target": "test.woff",
+        "requestHeaders": {
+          "Origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      {
+        "target": "test.woff2",
+        "requestHeaders": {
+          "Origin": "http://"
+        },
+        "responseHeaders": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      },
+      {
+        "target": "test.xml",
+        "responseHeaders": {
+          "Cache-Control": "max-age=0",
+          "Content-Security-Policy": true,
+          "Permissions-Policy": true,
+          "Referrer-Policy": "strict-origin-when-cross-origin",
+          "Cross-Origin-Embedder-Policy": "require-corp",
+          "Cross-Origin-Opener-Policy": "same-origin",
+          "Cross-Origin-Resource-Policy": "same-origin"
+        }
+      },
+      "test.xpi"
+    ]
+  },
+  {
+    "name": "access is forbidden to files that can expose sensitive information",
+    "domain": "http://server.localhost/",
+    "default": {
+      "statusCode": 403
+    },
+    "requests": [
+      "%23test%23",
+      "test.bak",
+      "test.conf",
+      "test.dist",
+      "test.fla",
+      "test.inc",
+      "test.ini",
+      "test.log",
+      "test.psd",
+      "test.sh",
+      "test.sql",
+      "test.swo",
+      "test.swp"
+    ]
+  },
+  {
+    "name": "files as visible content from within the `/.well-known/` hidden directory are served",
+    "domain": "http://server.localhost/",
+    "default": {
+      "requestHeaders": {
+        "Accept-Encoding": "gzip, deflate, sdch"
+      },
+      "responseHeaders": {
+        "Access-Control-Allow-Origin": null,
+        "X-Powered-By": null,
+        "X-Content-Type-Options": "nosniff",
+        "Cache-Control": "max-age=0",
+        "Content-Security-Policy": true,
+        "Permissions-Policy": true,
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Cross-Origin-Embedder-Policy": "require-corp",
+        "Cross-Origin-Opener-Policy": "same-origin",
+        "Cross-Origin-Resource-Policy": "same-origin",        "X-Frame-Options": "DENY",
+        "Content-Type": "text/html; charset=utf-8",
+        "Content-Encoding": "gzip"
+      }
+    },
+    "requests": [
+      ".well-known/test.html",
+      ".well-known/test/test.html"
+    ]
+  }
+]
