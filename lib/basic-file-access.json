@@ -26,7 +26,7 @@
       {
         "target": "test.appcache",
         "responseHeaders": {
-          "Cache-Control": "max-age=0"
+          "Cache-Control": null
         }
       },
       {
@@ -85,7 +85,7 @@
       {
         "target": "test.geojson",
         "responseHeaders": {
-          "Cache-Control": "max-age=0"
+          "Cache-Control": null
         }
       },
       {
@@ -101,7 +101,7 @@
       {
         "target": "test.html",
         "responseHeaders": {
-          "Cache-Control": "max-age=0",
+          "Cache-Control": null,
           "Content-Security-Policy": true,
           "Permissions-Policy": true,
           "Referrer-Policy": "strict-origin-when-cross-origin",
@@ -125,7 +125,7 @@
       {
         "target": "test.ics",
         "responseHeaders": {
-          "Cache-Control": "max-age=0"
+          "Cache-Control": null
         }
       },
       {
@@ -161,13 +161,13 @@
       {
         "target": "test.json",
         "responseHeaders": {
-          "Cache-Control": "max-age=0"
+          "Cache-Control": null
         }
       },
       {
         "target": "test.jsonld",
         "responseHeaders": {
-          "Cache-Control": "max-age=0"
+          "Cache-Control": null
         }
       },
       "test.m4a",
@@ -180,19 +180,19 @@
       {
         "target": "test.map",
         "responseHeaders": {
-          "Cache-Control": "max-age=0"
+          "Cache-Control": null
         }
       },
       {
         "target": "test.markdown",
         "responseHeaders": {
-          "Cache-Control": "max-age=0"
+          "Cache-Control": null
         }
       },
       {
         "target": "test.md",
         "responseHeaders": {
-          "Cache-Control": "max-age=0"
+          "Cache-Control": null
         }
       },
       {
@@ -339,7 +339,7 @@
       {
         "target": "test.webapp",
         "responseHeaders": {
-          "Cache-Control": "max-age=0"
+          "Cache-Control": null
         }
       },
       "test.webm",
@@ -379,7 +379,7 @@
       {
         "target": "test.xml",
         "responseHeaders": {
-          "Cache-Control": "max-age=0",
+          "Cache-Control": null,
           "Content-Security-Policy": true,
           "Permissions-Policy": true,
           "Referrer-Policy": "strict-origin-when-cross-origin",
@@ -424,13 +424,14 @@
         "Access-Control-Allow-Origin": null,
         "X-Powered-By": null,
         "X-Content-Type-Options": "nosniff",
-        "Cache-Control": "max-age=0",
+        "Cache-Control": null,
         "Content-Security-Policy": true,
         "Permissions-Policy": true,
         "Referrer-Policy": "strict-origin-when-cross-origin",
         "Cross-Origin-Embedder-Policy": "require-corp",
         "Cross-Origin-Opener-Policy": "same-origin",
-        "Cross-Origin-Resource-Policy": "same-origin",        "X-Frame-Options": "DENY",
+        "Cross-Origin-Resource-Policy": "same-origin",
+        "X-Frame-Options": "DENY",
         "Content-Type": "text/html; charset=utf-8",
         "Content-Encoding": "gzip"
       }
