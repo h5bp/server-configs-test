@@ -26,7 +26,7 @@
       {
         "target": "test.appcache",
         "responseHeaders": {
-          "Cache-Control": null
+          "Cache-Control": false
         }
       },
       {
@@ -85,7 +85,7 @@
       {
         "target": "test.geojson",
         "responseHeaders": {
-          "Cache-Control": null
+          "Cache-Control": false
         }
       },
       {
@@ -101,7 +101,7 @@
       {
         "target": "test.html",
         "responseHeaders": {
-          "Cache-Control": null,
+          "Cache-Control": false,
           "Content-Security-Policy": true,
           "Permissions-Policy": true,
           "Referrer-Policy": "strict-origin-when-cross-origin",
@@ -125,7 +125,7 @@
       {
         "target": "test.ics",
         "responseHeaders": {
-          "Cache-Control": null
+          "Cache-Control": false
         }
       },
       {
@@ -161,13 +161,13 @@
       {
         "target": "test.json",
         "responseHeaders": {
-          "Cache-Control": null
+          "Cache-Control": false
         }
       },
       {
         "target": "test.jsonld",
         "responseHeaders": {
-          "Cache-Control": null
+          "Cache-Control": false
         }
       },
       "test.m4a",
@@ -180,19 +180,19 @@
       {
         "target": "test.map",
         "responseHeaders": {
-          "Cache-Control": null
+          "Cache-Control": false
         }
       },
       {
         "target": "test.markdown",
         "responseHeaders": {
-          "Cache-Control": null
+          "Cache-Control": false
         }
       },
       {
         "target": "test.md",
         "responseHeaders": {
-          "Cache-Control": null
+          "Cache-Control": false
         }
       },
       {
@@ -339,7 +339,7 @@
       {
         "target": "test.webapp",
         "responseHeaders": {
-          "Cache-Control": null
+          "Cache-Control": false
         }
       },
       "test.webm",
@@ -379,7 +379,7 @@
       {
         "target": "test.xml",
         "responseHeaders": {
-          "Cache-Control": null,
+          "Cache-Control": false,
           "Content-Security-Policy": true,
           "Permissions-Policy": true,
           "Referrer-Policy": "strict-origin-when-cross-origin",
@@ -424,7 +424,7 @@
         "Access-Control-Allow-Origin": null,
         "X-Powered-By": null,
         "X-Content-Type-Options": "nosniff",
-        "Cache-Control": null,
+        "Cache-Control": false,
         "Content-Security-Policy": true,
         "Permissions-Policy": true,
         "Referrer-Policy": "strict-origin-when-cross-origin",
