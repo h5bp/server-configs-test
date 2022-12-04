@@ -8,7 +8,7 @@
       },
       "responseHeaders": {
         "Access-Control-Allow-Origin": null,
-        "Cache-Control": "max-age=31536000",
+        "Cache-Control": "max-age=31536000, public, immutable, stale-while-revalidate",
         "Content-Security-Policy": null,
         "Permissions-Policy": null,
         "Referrer-Policy": null,
@@ -26,13 +26,13 @@
       {
         "target": "test.appcache",
         "responseHeaders": {
-          "Cache-Control": false
+          "Cache-Control": "no-cache"
         }
       },
       {
         "target": "test.atom",
         "responseHeaders": {
-          "Cache-Control": "max-age=3600",
+          "Cache-Control": "max-age=3600, public, stale-while-revalidate",
           "Content-Security-Policy": true,
           "Permissions-Policy": true,
           "Referrer-Policy": "strict-origin-when-cross-origin",
@@ -85,7 +85,7 @@
       {
         "target": "test.geojson",
         "responseHeaders": {
-          "Cache-Control": false
+          "Cache-Control": "no-cache"
         }
       },
       {
@@ -101,7 +101,7 @@
       {
         "target": "test.html",
         "responseHeaders": {
-          "Cache-Control": false,
+          "Cache-Control": "private, must-revalidate",
           "Content-Security-Policy": true,
           "Permissions-Policy": true,
           "Referrer-Policy": "strict-origin-when-cross-origin",
@@ -118,14 +118,14 @@
         },
         "responseHeaders": {
           "Access-Control-Allow-Origin": "*",
-          "Cache-Control": "max-age=604800",
+          "Cache-Control": "max-age=604800, public, immutable, stale-while-revalidate",
           "Content-Type": "image/x-icon"
         }
       },
       {
         "target": "test.ics",
         "responseHeaders": {
-          "Cache-Control": false
+          "Cache-Control": "private, must-revalidate"
         }
       },
       {
@@ -161,13 +161,13 @@
       {
         "target": "test.json",
         "responseHeaders": {
-          "Cache-Control": false
+          "Cache-Control": "no-cache"
         }
       },
       {
         "target": "test.jsonld",
         "responseHeaders": {
-          "Cache-Control": false
+          "Cache-Control": "no-cache"
         }
       },
       "test.m4a",
@@ -180,19 +180,19 @@
       {
         "target": "test.map",
         "responseHeaders": {
-          "Cache-Control": false
+          "Cache-Control": "no-cache"
         }
       },
       {
         "target": "test.markdown",
         "responseHeaders": {
-          "Cache-Control": false
+          "Cache-Control": "private, must-revalidate"
         }
       },
       {
         "target": "test.md",
         "responseHeaders": {
-          "Cache-Control": false
+          "Cache-Control": "private, must-revalidate"
         }
       },
       {
@@ -250,7 +250,7 @@
       {
         "target": "test.rdf",
         "responseHeaders": {
-          "Cache-Control": "max-age=3600",
+          "Cache-Control": "max-age=3600, public, stale-while-revalidate",
           "Content-Security-Policy": true,
           "Permissions-Policy": true,
           "Referrer-Policy": "strict-origin-when-cross-origin",
@@ -262,7 +262,7 @@
       {
         "target": "test.rss",
         "responseHeaders": {
-          "Cache-Control": "max-age=3600",
+          "Cache-Control": "max-age=3600, public, stale-while-revalidate",
           "Content-Security-Policy": true,
           "Permissions-Policy": true,
           "Referrer-Policy": "strict-origin-when-cross-origin",
@@ -339,14 +339,14 @@
       {
         "target": "test.webapp",
         "responseHeaders": {
-          "Cache-Control": false
+          "Cache-Control": "no-cache"
         }
       },
       "test.webm",
       {
         "target": "test.webmanifest",
         "responseHeaders": {
-          "Cache-Control": "max-age=604800"
+          "Cache-Control": "max-age=604800, public"
         }
       },
       {
@@ -379,7 +379,7 @@
       {
         "target": "test.xml",
         "responseHeaders": {
-          "Cache-Control": false,
+          "Cache-Control": "no-cache",
           "Content-Security-Policy": true,
           "Permissions-Policy": true,
           "Referrer-Policy": "strict-origin-when-cross-origin",
@@ -424,7 +424,7 @@
         "Access-Control-Allow-Origin": null,
         "X-Powered-By": null,
         "X-Content-Type-Options": "nosniff",
-        "Cache-Control": false,
+        "Cache-Control": "private, must-revalidate",
         "Content-Security-Policy": true,
         "Permissions-Policy": true,
         "Referrer-Policy": "strict-origin-when-cross-origin",
