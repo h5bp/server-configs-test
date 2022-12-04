@@ -101,7 +101,7 @@
       {
         "target": "test.html",
         "responseHeaders": {
-          "Cache-Control": "private, must-revalidate",
+          "Cache-Control": "no-cache, private, must-revalidate",
           "Content-Security-Policy": true,
           "Permissions-Policy": true,
           "Referrer-Policy": "strict-origin-when-cross-origin",
@@ -125,7 +125,7 @@
       {
         "target": "test.ics",
         "responseHeaders": {
-          "Cache-Control": "private, must-revalidate"
+          "Cache-Control": "no-cache, private, must-revalidate"
         }
       },
       {
@@ -186,13 +186,13 @@
       {
         "target": "test.markdown",
         "responseHeaders": {
-          "Cache-Control": "private, must-revalidate"
+          "Cache-Control": "no-cache, private, must-revalidate"
         }
       },
       {
         "target": "test.md",
         "responseHeaders": {
-          "Cache-Control": "private, must-revalidate"
+          "Cache-Control": "no-cache, private, must-revalidate"
         }
       },
       {
