@@ -424,7 +424,7 @@
         "Access-Control-Allow-Origin": null,
         "X-Powered-By": null,
         "X-Content-Type-Options": "nosniff",
-        "Cache-Control": "private, must-revalidate",
+        "Cache-Control": "no-cache, private, must-revalidate",
         "Content-Security-Policy": true,
         "Permissions-Policy": true,
         "Referrer-Policy": "strict-origin-when-cross-origin",
