@@ -300,6 +300,7 @@
         "responseHeaders": {
           "Access-Control-Allow-Origin": "*",
           "Content-Security-Policy": true,
+          "Cache-Control": true,
           "Permissions-Policy": true,
           "Referrer-Policy": "strict-origin-when-cross-origin",
           "Cross-Origin-Embedder-Policy": "require-corp",
