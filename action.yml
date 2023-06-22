@@ -6,9 +6,9 @@ branding:
   icon: check-circle
 inputs:
   k6-version:
-    description: "The k6 version to use (default: 0.44.0)"
+    description: "The k6 version to use (default: 0.45.0)"
     required: false
-    default: "0.44.0"
+    default: "0.45.0"
   command:
     description: The server-configs-test command to run (test or benchmark)
     required: false
