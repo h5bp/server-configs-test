@@ -1,6 +1,6 @@
 # [Test Server Configs](https://github.com/h5bp/server-configs-test)
 
-[![Lint](https://github.com/h5bp/server-configs-test/workflows/Lint/badge.svg)](https://github.com/h5bp/server-configs-test/actions?query=workflow%3ALint)
+[![CI](https://github.com/h5bp/server-configs-test/actions/workflows/ci.yml/badge.svg)](https://github.com/h5bp/server-configs-test/actions/workflows/ci.yml)
 
 **Test Server Configs** is a collection of test scripts for server validation.
 
