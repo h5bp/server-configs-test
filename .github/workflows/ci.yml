@@ -55,7 +55,7 @@ jobs:
         run: npm run build:action
 
       - name: Save files
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-files
           path: dist
