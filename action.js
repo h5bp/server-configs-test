@@ -6,7 +6,7 @@ const path = require('path')
 const core = require('@actions/core')
 const tc = require('@actions/tool-cache')
 const exec = require('@actions/exec')
-const artifact = require('@actions/artifact')
+const { DefaultArtifactClient } = require('@actions/artifact')
 
 async function action () {
   const command = core.getInput('command', { required: true })
@@ -101,7 +101,7 @@ async function action () {
   core.endGroup()
 
   // ------
-  await artifact.create().uploadArtifact(
+  await (new DefaultArtifactClient()).uploadArtifact(
     `sct-${command}-results`,
     [
       path.join(__dirname, '../sct-results.json'),
