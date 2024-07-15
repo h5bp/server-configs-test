@@ -5,10 +5,6 @@ branding:
   color: orange
   icon: check-circle
 inputs:
-  k6-version:
-    description: "The k6 version to use (default: 0.50.0)"
-    required: false
-    default: "0.50.0"
   command:
     description: The server-configs-test command to run (test or benchmark)
     required: false

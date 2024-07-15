@@ -4,7 +4,6 @@
 
 const path = require('path')
 const core = require('@actions/core')
-const tc = require('@actions/tool-cache')
 const exec = require('@actions/exec')
 const { DefaultArtifactClient } = require('@actions/artifact')
 
@@ -50,17 +49,6 @@ async function action () {
 
   // ------
   core.startGroup('Preparing server-configs-test')
-  const k6Version = core.getInput('k6-version', { required: true })
-  // ---
-  core.debug(`Download k6 v${k6Version}`)
-  let k6Path = tc.find('k6', k6Version)
-  if (!k6Path) {
-    const k6Download = await tc.downloadTool(`https://github.com/grafana/k6/releases/download/v${k6Version}/k6-v${k6Version}-linux-amd64.tar.gz`)
-    const k6ExtractedFolder = await tc.extractTar(k6Download)
-    const k6Root = path.join(k6ExtractedFolder, `k6-v${k6Version}-linux-amd64`)
-    k6Path = await tc.cacheDir(k6Root, 'k6', k6Version)
-  }
-  core.addPath(k6Path)
   // ---
   core.debug('Build k6 arguments')
   const k6Args = ['run']
