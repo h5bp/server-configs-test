@@ -16,10 +16,13 @@ Some steps are required to make them ready to run.
 ### GitHub Actions
 
 #### Pre-requisites
+
 Create a workflow `.yml` file in your repositories `.github/workflows` directory.
 An [example workflow](#example-workflow) is available below.
 For more information, reference the GitHub Help Documentation for
 [Creating a workflow file](https://help.github.com/en/articles/configuring-a-workflow#creating-a-workflow-file).
+
+Make sure to use the [`grafana/setup-k6-action`](https://github.com/grafana/setup-k6-action) action to install k6.
 
 #### Inputs
 See [action.yml](action.yml).
@@ -29,7 +32,8 @@ For more information on these inputs, see the [API Documentation](https://develo
 
 ```yaml
 steps:
-  - uses: actions/checkout@v
+  - uses: actions/checkout@v4
+  - uses: grafana/setup-k6-action@v1
   - name: Test with server-configs-test
     uses: h5bp/server-configs-test@main
     with:
