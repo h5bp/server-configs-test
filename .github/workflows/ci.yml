@@ -55,7 +55,7 @@ jobs:
         run: npm run build:action
 
       - name: Save files
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: build-files
           include-hidden-files: true
