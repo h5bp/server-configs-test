@@ -9,7 +9,7 @@
   "dependencies": {
     "@actions/artifact": "^6.1.0",
     "@actions/core": "^2.0.3",
-    "@actions/exec": "^2.0.0",
+    "@actions/exec": "^3.0.0",
     "compressible": "^2.0.18",
     "fs-extra": "^11.3.3",
     "k6": "0.0.0",
