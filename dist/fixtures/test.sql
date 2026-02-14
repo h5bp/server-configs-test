@@ -1,1 +1,1 @@
-{"Content-Type":"application/x-sql","Content-Encoding":null}
+{"Content-Type":"application/sql","Content-Encoding":null}
