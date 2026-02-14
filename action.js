@@ -2,10 +2,10 @@
 //
 // Licensed under the MIT License
 
-const path = require('path')
-const core = require('@actions/core')
-const exec = require('@actions/exec')
-const { DefaultArtifactClient } = require('@actions/artifact')
+import join from 'path'
+import * as core from '@actions/core'
+import exec from '@actions/exec'
+import { DefaultArtifactClient } from '@actions/artifact'
 
 async function action () {
   const command = core.getInput('command', { required: true })
@@ -16,10 +16,10 @@ async function action () {
   // ------
   core.startGroup('Starting server container')
   const serverArgs = [
-    '-v', `${path.join(__dirname, 'fixtures')}:${core.getInput('root-path', { required: true })}`
+    '-v', `${join(__dirname, 'fixtures')}:${core.getInput('root-path', { required: true })}`
   ]
   if (core.getInput('certs-path')) {
-    serverArgs.push('-v', `${path.join(__dirname, '../certs')}:${core.getInput('certs-path')}`)
+    serverArgs.push('-v', `${join(__dirname, '../certs')}:${core.getInput('certs-path')}`)
   } else {
     core.warning('certs-path was not set')
   }
@@ -33,7 +33,7 @@ async function action () {
   serverArgs.push(core.getInput('server', { required: true }))
 
   try {
-    await exec.exec('docker', [
+    await exec('docker', [
       'run',
       '--detach',
       '-p', '80:80',
@@ -54,18 +54,18 @@ async function action () {
   const k6Args = ['run']
   if (command === 'test') {
     k6Args.push(
-      path.join(__dirname, '../lib/index.js'),
+      join(__dirname, '../lib/index.js'),
       '-e', `TESTS=${core.getInput('tests')}`
     )
   } else if (command === 'benchmark') {
-    k6Args.push(path.join(__dirname, '../lib/benchmark.js'))
+    k6Args.push(join(__dirname, '../lib/benchmark.js'))
   }
   if (core.isDebug() && command !== 'benchmark') {
     k6Args.push('--http-debug')
   }
   k6Args.push(
-    '--summary-export', path.join(__dirname, '../sct-summary.json'),
-    '--out', `json=${path.join(__dirname, '../sct-results.json')}`
+    '--summary-export', join(__dirname, '../sct-summary.json'),
+    '--out', `json=${join(__dirname, '../sct-results.json')}`
   )
   if (process.env.K6_CLOUD_TOKEN) {
     k6Args.push('--out', 'cloud')
@@ -74,7 +74,7 @@ async function action () {
 
   // ------
   try {
-    await exec.exec('k6', k6Args)
+    await exec('k6', k6Args)
   } catch (e) {
     core.setFailed(e.message)
   }
@@ -82,20 +82,20 @@ async function action () {
   // ------
   core.startGroup('Shutting down server and dumping logs')
   if (command !== 'benchmark') {
-    await exec.exec('docker', ['logs', 'server'])
+    await exec('docker', ['logs', 'server'])
   }
-  await exec.exec('docker', ['kill', 'server'])
-  await exec.exec('docker', ['rm', 'server'])
+  await exec('docker', ['kill', 'server'])
+  await exec('docker', ['rm', 'server'])
   core.endGroup()
 
   // ------
   await (new DefaultArtifactClient()).uploadArtifact(
     `sct-${command}-results`,
     [
-      path.join(__dirname, '../sct-results.json'),
-      path.join(__dirname, '../sct-summary.json')
+      join(__dirname, '../sct-results.json'),
+      join(__dirname, '../sct-summary.json')
     ],
-    path.join(__dirname, '..'),
+    join(__dirname, '..'),
     { continueOnError: true }
   )
 }
