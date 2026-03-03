@@ -11,7 +11,7 @@
     "@actions/core": "^3.0.0",
     "@actions/exec": "^3.0.0",
     "compressible": "^2.0.18",
-    "fs-extra": "^11.3.3",
+    "fs-extra": "^11.3.4",
     "k6": "0.0.0",
     "mime-types": "^3.0.2"
   },
