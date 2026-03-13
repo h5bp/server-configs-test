@@ -2,7 +2,7 @@
 //
 // Licensed under the MIT License
 
-import join from 'path'
+import path from 'path'
 import * as core from '@actions/core'
 import exec from '@actions/exec'
 import { DefaultArtifactClient } from '@actions/artifact'
@@ -16,10 +16,10 @@ async function action () {
   // ------
   core.startGroup('Starting server container')
   const serverArgs = [
-    '-v', `${join(__dirname, 'fixtures')}:${core.getInput('root-path', { required: true })}`
+    '-v', `${path.join(__dirname, 'fixtures')}:${core.getInput('root-path', { required: true })}`
   ]
   if (core.getInput('certs-path')) {
-    serverArgs.push('-v', `${join(__dirname, '../certs')}:${core.getInput('certs-path')}`)
+    serverArgs.push('-v', `${path.join(__dirname, '../certs')}:${core.getInput('certs-path')}`)
   } else {
     core.warning('certs-path was not set')
   }
@@ -54,18 +54,18 @@ async function action () {
   const k6Args = ['run']
   if (command === 'test') {
     k6Args.push(
-      join(__dirname, '../lib/index.js'),
+      path.join(__dirname, '../lib/index.js'),
       '-e', `TESTS=${core.getInput('tests')}`
     )
   } else if (command === 'benchmark') {
-    k6Args.push(join(__dirname, '../lib/benchmark.js'))
+    k6Args.push(path.join(__dirname, '../lib/benchmark.js'))
   }
   if (core.isDebug() && command !== 'benchmark') {
     k6Args.push('--http-debug')
   }
   k6Args.push(
-    '--summary-export', join(__dirname, '../sct-summary.json'),
-    '--out', `json=${join(__dirname, '../sct-results.json')}`
+    '--summary-export', path.join(__dirname, '../sct-summary.json'),
+    '--out', `json=${path.join(__dirname, '../sct-results.json')}`
   )
   if (process.env.K6_CLOUD_TOKEN) {
     k6Args.push('--out', 'cloud')
@@ -92,10 +92,10 @@ async function action () {
   await (new DefaultArtifactClient()).uploadArtifact(
     `sct-${command}-results`,
     [
-      join(__dirname, '../sct-results.json'),
-      join(__dirname, '../sct-summary.json')
+      path.join(__dirname, '../sct-results.json'),
+      path.join(__dirname, '../sct-summary.json')
     ],
-    join(__dirname, '..'),
+    path.join(__dirname, '..'),
     { continueOnError: true }
   )
 }
