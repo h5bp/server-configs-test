@@ -4,8 +4,8 @@
 
 import path from 'path'
 import * as core from '@actions/core'
-import exec from '@actions/exec'
-import { DefaultArtifactClient } from '@actions/artifact'
+import { exec } from '@actions/exec'
+import artifact from '@actions/artifact'
 
 async function action () {
   const command = core.getInput('command', { required: true })
@@ -89,7 +89,7 @@ async function action () {
   core.endGroup()
 
   // ------
-  await (new DefaultArtifactClient()).uploadArtifact(
+  await artifact.uploadArtifact(
     `sct-${command}-results`,
     [
       path.join(__dirname, '../sct-results.json'),
